@@ -1,0 +1,45 @@
+<h1>Listing articles</h1>
+
+<table>
+  <tr>
+    <th>Title en</th>
+    <th>Title no</th>
+    <th>Ingress en</th>
+    <th>Ingress no</th>
+    <th>Body en</th>
+    <th>Body no</th>
+    <th>List</th>
+    <th>Weight</th>
+    <th>Deleted</th>
+    <th>Press release</th>
+    <th>Sub title en</th>
+    <th>Sub title no</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @articles.each do |article| %>
+  <tr>
+    <td><%= article.title_en %></td>
+    <td><%= article.title_no %></td>
+    <td><%= article.ingress_en %></td>
+    <td><%= article.ingress_no %></td>
+    <td><%= article.body_en %></td>
+    <td><%= article.body_no %></td>
+    <td><%= article.list %></td>
+    <td><%= article.weight %></td>
+    <td><%= article.deleted %></td>
+    <td><%= article.press_release %></td>
+    <td><%= article.sub_title_en %></td>
+    <td><%= article.sub_title_no %></td>
+    <td><%= link_to 'Show', article %></td>
+    <td><%= link_to 'Edit', edit_article_path(article) %></td>
+    <td><%= link_to 'Destroy', article, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Article', new_article_path %>
