@@ -1,0 +1,276 @@
+body {
+	background: #1a96b8  url(../images/bg.png) repeat-x;
+	color: #333;
+	font-size: 11px;
+}
+
+a {
+	color: #fff;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+.container_24 {
+	
+}
+
+#omeny {
+	background: #000 url(../img/omeny.png) repeat-x;
+	height: 27px;
+	padding: 8px 0 0 0 ;
+	clear: both;
+	
+}
+
+#olink {
+	height: 27px;
+}
+
+#odiverse {
+	height: 27px;
+}
+
+.olink {
+	color: #faa61f;
+	font-size: 12px;
+	margin: 0 15px 0 0;
+	padding-top: 2px;
+	float: left;
+}
+
+
+.obilde {
+	float: left;
+	margin: 0 3px 0 0;
+}
+
+.oflagg {
+	float: right;
+	margin: 0 3px 0 0;
+	padding-top: 4px;
+}
+
+#header {
+	background: #fff url(../img/headerbg.png);
+	height: 246px;
+	clear: both;
+}
+
+.isfitlogo {
+	margin: 71px 0 0 28px;
+}
+
+#meny {
+	background: #fff url(../img/meny.png) repeat-x;
+	height: 34px;
+	clear: both;
+}
+
+#faner {
+	height: 34px;
+}
+
+#faner a{
+	float: left;
+	font-size: 12px;
+	font-weight: bold;
+	margin: 9px 0 0 0;
+}
+
+.menyspacer {
+	float: left;
+	margin: 0 9px 0 9px;
+}
+
+#sok {
+	height: 34px;
+}
+
+#sok input[type="text"], #sok textarea {
+    font-size: 12px;
+	color: #964300;
+    margin:0;
+	padding:0;
+	background: #fff;
+    display: block;
+    border: solid 1px #ec9600;
+	border-right: 0;
+	margin:8px 0 0 0;
+    width: 112px;
+	height: 16px;
+	float: right;
+}
+
+#sok input.btn {
+	font-size: 12px;
+	color: #fffcfb; 
+	text-align: center;
+	background: url(../img/sok.png); 
+	margin:8px 0 0 0;
+	width: 17px;
+	height: 18px;
+	float: right;
+	border:0;
+} 
+
+#submeny {
+	height: 37px;
+	background: #fff url(../img/submeny.png) repeat-x;
+	clear: both;
+}
+
+.a_sublink {
+	color: #000;
+	font-size: 11px;
+	font-weight:bold;
+	float: left;
+	margin: 10px 10px 0 10px;
+}
+
+.ina_sublink {
+	color: #ffac0c;
+	font-size: 11px;
+	font-weight: bold;
+	float: left;
+	margin: 10px 10px 0 10px;
+}
+
+#ramme {
+	background: #eeeeee;
+	padding-bottom: 20px;
+}
+
+#venstreramme {
+	padding-top: 15px;
+}
+
+#boksturkis_bg {
+	background: url(../img/boksturkisbg.png) repeat-y;
+	margin-bottom: 10px;
+}
+
+#boksturkis {
+	background: url(../img/boksturkis.png) no-repeat;
+	height: 600px;
+}
+
+#midtramme {
+	padding-top: 15px;
+}
+
+#overskrift {
+	background: #fff;
+	height: 33px;
+	padding-top:10px;
+	font: #000;
+	font-size: 18px;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+
+#hoved_artikkel {
+	background: #fff;
+	padding: 10px 0 10px 0;
+	margin-bottom: 10px;
+}
+
+#hoved_artikkel h1 {
+	margin: 0px 10px 0 10px;
+	color: #000;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+#hoved_artikkel img {
+	margin: 10px 10px 5px 10px;
+	height: 196px;
+	width: 530px;
+}
+
+#hoved_artikkel p {
+	margin: 0px 10px 0 10px;
+	color: #000;
+	font-size: 12px;
+}
+
+#artikkel {
+	background: #fff;
+	padding: 10px 0 10px 0;
+	margin-bottom: 10px;
+}
+
+#artikkel h1 {
+	margin: 0px 10px 0 10px;
+	color: #000;
+	font-size: 12px;
+	font-weight: bold;
+}
+
+#artikkel img {
+	margin: 10px 10px 5px 10px;
+	height: 120px;
+	width: 250px;
+}
+
+#artikkel p {
+	margin: 0px 10px 0 10px;
+	color: #000;
+	font-size: 10px;
+}
+
+#hoyreramme {
+	padding-top: 15px;
+}
+
+#boksbla_bg {
+	background: url(../img/boksblabg.png) repeat-y;
+	margin-bottom: 10px;
+}
+
+#boksbla {
+	background: url(../img/boksbla.png) no-repeat;
+	height: 218px;
+}
+
+#boksrod_bg {
+	background: url(../img/boksrodbg.png) repeat-y;
+	margin-bottom: 10px;
+}
+
+#boksrod {
+	background: url(../img/boksrod.png) no-repeat;
+	height: 218px;
+}
+
+#boksoransje_bg {
+	background: url(../img/boksoransjebg.png) repeat-y;
+	margin-bottom: 10px;
+}
+
+#boksoransje {
+	background: url(../img/boksoransje.png) no-repeat;
+	height: 218px;
+}
+
+#boksgronn_bg {
+	background: url(../img/boksgronnbg.png) repeat-y;
+	margin-bottom: 10px;
+}
+
+#boksgronn {
+	background: url(../img/boksgronn.png) no-repeat;
+	height: 218px;
+}
+
+#footer {
+	background: #001625 url(../img/footer.png) repeat-x;
+}
+
+.footerlogo {
+	margin: 31px 20px 20px 5px;
+}
+	
+	

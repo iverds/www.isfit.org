@@ -1,45 +1,44 @@
-<h1>Listing articles</h1>
+<div id="overskrift" class="grid_14 alpha omega"><!--- Start overskrift --->
+  <center>NYHETER</center>
+</div><!--- Slutt overskrift --->
 
-<table>
-  <tr>
-    <th>Title en</th>
-    <th>Title no</th>
-    <th>Ingress en</th>
-    <th>Ingress no</th>
-    <th>Body en</th>
-    <th>Body no</th>
-    <th>List</th>
-    <th>Weight</th>
-    <th>Deleted</th>
-    <th>Press release</th>
-    <th>Sub title en</th>
-    <th>Sub title no</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<div id="hoved_artikkel" class="grid_14 alpha omega"><!--- Start hoved_artikkel --->
+  <a href="">
+    <h1>Lorem Ipsum</h1>
+    <%= image_tag ("article/art1.png")%>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque in sem neque, sit amet auctor lacus. Duis dapibus nisl a erat ultricies accumsan. Duis id volutpat nisi. Vivamus magna libero, pretium nec pulvinar vel, molestie non nunc. Nullam eget imperdiet purus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis erat vitae enim varius viverra.</p></a>
+</div><!--- Slutt hoved_artikkel --->
 
-<% @articles.each do |article| %>
-  <tr>
-    <td><%= article.title_en %></td>
-    <td><%= article.title_no %></td>
-    <td><%= article.ingress_en %></td>
-    <td><%= article.ingress_no %></td>
-    <td><%= article.body_en %></td>
-    <td><%= article.body_no %></td>
-    <td><%= article.list %></td>
-    <td><%= article.weight %></td>
-    <td><%= article.deleted %></td>
-    <td><%= article.press_release %></td>
-    <td><%= article.sub_title_en %></td>
-    <td><%= article.sub_title_no %></td>
-    <td><%= link_to 'Show', article %></td>
-    <td><%= link_to 'Edit', edit_article_path(article) %></td>
-    <td><%= link_to 'Destroy', article, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
+<div id="artikkel" class="grid_7 alpha"><!--- Start artikkel --->
+  <a href="#artikkel">
+    <h1>Lorem Ipsum</h1>
+    <%= image_tag ("article/art2.png") %>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque in sem neque, sit amet auctor lacus. Duis dapibus nisl a erat ultricies accumsan. Duis id volutpat nisi. Vivamus magna libero, pretium nec pulvinar vel, molestie non nunc. Nullam eget imperdiet purus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis erat vitae enim varius viverra.</p></a>
+</div><!--- Slutt artikkel --->
 
-<br />
+<div id="artikkel" class="grid_7 omega"><!--- Start artikkel --->
+  <a href="#artikkel">
+    <h1>Lorem Ipsum</h1>
+    <%= image_tag ("article/art3.png") %>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque in sem neque, sit amet auctor lacus. Duis dapibus nisl a erat ultricies accumsan. Duis id volutpat nisi. Vivamus magna libero, pretium nec pulvinar vel, molestie non nunc. Nullam eget imperdiet purus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis erat vitae enim varius viverra.</p></a>
+</div><!--- Slutt artikkel --->
+
+<div id="artikkel" class="grid_7 alpha"><!--- Start artikkel --->
+  <a href="#artikkel">
+    <h1>Lorem Ipsum</h1>
+    <%= image_tag ("article/art4.png") %>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque in sem neque, sit amet auctor lacus. Duis dapibus nisl a erat ultricies accumsan. Duis id volutpat nisi. Vivamus magna libero, pretium nec pulvinar vel, molestie non nunc. Nullam eget imperdiet purus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis erat vitae enim varius viverra.</p></a>
+</div><!--- Slutt artikkel --->
+
+<div id="artikkel" class="grid_7 omega"><!--- Start artikkel --->
+  <a href="#artikkel">
+    <h1>Lorem Ipsum</h1>
+    <%= image_tag ("article/art5.png") %>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque in sem neque, sit amet auctor lacus. Duis dapibus nisl a erat ultricies accumsan. Duis id volutpat nisi. Vivamus magna libero, pretium nec pulvinar vel, molestie non nunc. Nullam eget imperdiet purus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis erat vitae enim varius viverra.</p></a>
+</div><!--- Slutt artikkel --->
+
 
 <%= link_to 'New Article', new_article_path %>

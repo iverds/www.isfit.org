@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100805122627) do
+ActiveRecord::Schema.define(:version => 20100806113753) do
 
   create_table "articles", :force => true do |t|
     t.string   "title_en"
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(:version => 20100805122627) do
     t.text     "sub_title_no"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "main_article"
   end
 
 end

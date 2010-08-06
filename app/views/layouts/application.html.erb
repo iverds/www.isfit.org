@@ -1,14 +1,86 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>WwwIsfitOrg</title>
+  <title>ISFiT 2011</title>
   <%= stylesheet_link_tag :all %>
   <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tag %>
 </head>
-<body>
-
-<%= yield %>
-
-</body>
+  <body>
+    <div id="hovedramme" class="container_24"> <!--- Start hovedramme --->
+      <div id="omeny" class="grid_25"> <!--- Start omeny --->
+        <div id="olinker" class="grid_20"> <!--- Start olinker --->
+          <a href="#kontakt" class="olink"><%= t('layout.contact')%></a>
+          <a href="#presse" class="olink"><%= t('layout.press')%></a>
+          <a href="#internal" class="olink"><%= t('layout.internal')%></a>
+        </div><!--- Slutt olinker --->
+        <div id="odiverse" class="grid_4"><!--- Start odiverse --->
+          <%= link_to (image_tag("gb.png"),{ :locale=>"en"}, :class=>"oflagg") %>
+          <%= link_to (image_tag("no.png"),{ :locale=>"no"}, :class=>"oflagg") %>
+          <a href="http://www.facebook.com/group.php?gid=116305974170&ref=ts" class="obilde" target="_blank"><img src="images/facebook.png"></a>
+          <a href="http://twitter.com/isfit" class="obilde"><img src="images/twitter.png" target="_blank"></a>
+          <!--<a href="#rss" class="obilde"><img src="images/rss.png"></a>-->
+        </div><!--- Slutt odiverse --->
+      </div><!--- Slutt omeny --->
+      <div id="header" class="grid_25" ><!--- Start header --->
+        <a href="http://www.isfit.org" ><img src="images/isfitlogo.png" class="isfitlogo"></a>
+      </div><!--- Slutt header --->
+      <div id="meny" class="grid_25"><!--- Start meny --->
+        <div id="faner" class="grid_20"><!--- Start faner --->  
+          <a href="#nyheter">Nyheter</a><img src="images/menyspacer.png" class="menyspacer">
+          <a href="#sokisfit" >Søk ISFiT</a><img src="images/menyspacer.png" class="menyspacer">
+          <a href="#om" >Om ISFiT</a><img src="images/menyspacer.png" class="menyspacer">
+          <a href="#global" >Global Helse</a><img src="images/menyspacer.png" class="menyspacer">
+          <a href="#deltakere" >Deltakere</a><img src="images/menyspacer.png" class="menyspacer">
+          <a href="#isfitway" >The ISFiT-way</a><img src="images/menyspacer.png" class="menyspacer">
+          <a href="#forum" >Forum</a>
+        </div><!--- Slutt faner --->
+        <div id="sok" class="grid_4"><!--- Start søk --->
+          <input type="button" value="" class="btn"><input name="search" type="text" value="Søk ...">
+        </div><!--- Slutt søk --->
+      </div><!--- Slutt meny --->
+      <div id="submeny" class="grid_25"><!--- Start submeny --->
+        <a href="#nyheter" class="a_sublink">Siste nytt</a>
+        <a href="#arkiv" class="ina_sublink">Arkiv</a>
+      </div><!--- Slutt submeny --->
+      <div id="ramme" class="grid_25"><!--- Start ramme --->
+        <div id="venstreramme" class="grid_5"><!--- Start venstreramme --->
+          <div id="boksturkis_bg" class="grid_5 alpha omega"><!--- Start turkis --->
+            <div id="boksturkis" class="grid_5 alpha omega">
+            </div>
+          </div><!--- Slutt turkis --->
+        </div><!--- Slutt venstreramme --->
+        <div id="midtramme" class="grid_14"><!--- Start midtramme --->
+        <%= yield %>
+        </div><!--- Slutt midtramme --->
+        <div id="hoyreramme" class="grid_5"><!--- Start hoyreramme --->
+          <div id="boksbla_bg" class="grid_5 alpha omega"><!--- Start blå --->
+            <div id="boksbla" class="grid_5 alpha omega">
+            </div>
+          </div><!--- Slutt blå --->
+          <div id="boksrod_bg" class="grid_5 alpha omega"><!--- Start rød --->
+            <div id="boksrod" class="grid_5 alpha omega">
+              <h3>Siste fra spp</h3>
+              <ul>
+              <%#SppArticle.find(:all).each do |article|%>
+                <li><%#=link_to( article.title_en, "http://www.studentpeaceprize.org/articles/#{article.id}?tab=home", :target=>"_blank" )%></li>
+              <%#end%>
+              </ul>
+            </div>
+          </div><!--- Slutt rød --->
+          <div id="boksoransje_bg" class="grid_5 alpha omega"><!--- Start oransje --->
+            <div id="boksoransje" class="grid_5 alpha omega">
+            </div>
+          </div><!--- Slutt oransje --->
+          <div id="boksgronn_bg" class="grid_5 alpha omega"><!--- Start grønn --->
+            <div id="boksgronn" class="grid_5 alpha omega">
+            </div>
+          </div><!--- Slutt grønn --->
+        </div><!--- Slutt hoyreramme --->
+      </div><!--- Slutt ramme --->
+      <div id="footer" class="grid_25"><!--- Start footer --->
+        <a href="http://www.isfit.org"><img src="images/isfitliten.png" class="footerlogo"></a>
+      </div><!--- Slutt footer --->
+    </div><!--- Slutt hovedramme --->
+  </body>
 </html>
