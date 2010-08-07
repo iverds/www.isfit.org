@@ -1,0 +1,29 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  title: MyString
+  event_type: MyString
+  date: 2010-08-08
+  price_member: 1
+  price_other: 1
+  ingress: MyText
+  description: MyText
+  related_evend_id: 1
+  deleted: false
+  important: false
+  visible: false
+  url: MyString
+
+two:
+  title: MyString
+  event_type: MyString
+  date: 2010-08-08
+  price_member: 1
+  price_other: 1
+  ingress: MyText
+  description: MyText
+  related_evend_id: 1
+  deleted: false
+  important: false
+  visible: false
+  url: MyString
