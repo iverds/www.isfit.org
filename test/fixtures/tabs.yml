@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name_en: MyString
+  name_no: MyString
+  tag: MyString
+  order: 1
+
+two:
+  name_en: MyString
+  name_no: MyString
+  tag: MyString
+  order: 1

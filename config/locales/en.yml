@@ -6,3 +6,6 @@ en:
     contact: "Contact"
     press: "Press"
     internal:  "Internal"
+    search: "Search..."
+  article:
+    header: "NEWS"

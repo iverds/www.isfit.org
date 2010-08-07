@@ -3,3 +3,6 @@
     contact: "Kontakt"
     press: "Presse"
     internal:  "Internal"
+    search: "Søk..."
+  article:
+    header: "NYHETER"

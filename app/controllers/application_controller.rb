@@ -20,7 +20,7 @@ class ApplicationController < ActionController::Base
       Language.set(params[:locale])
       I18n.locale = params[:locale]
       session[:locale] = Language.to_s
-      redirect_to {}
+      redirect_to :back
     end
   end
 

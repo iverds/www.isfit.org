@@ -1,0 +1,21 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  title_en: MyString
+  title_no: MyString
+  ingress_en: MyText
+  ingress_no: MyText
+  body_en: MyText
+  body_no: MyText
+  tag: MyString
+  deleted: false
+
+two:
+  title_en: MyString
+  title_no: MyString
+  ingress_en: MyText
+  ingress_no: MyText
+  body_en: MyText
+  body_no: MyText
+  tag: MyString
+  deleted: false

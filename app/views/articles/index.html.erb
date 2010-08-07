@@ -1,44 +1,38 @@
 <div id="overskrift" class="grid_14 alpha omega"><!--- Start overskrift --->
-  <center>NYHETER</center>
+  <center><%=t('article.header')%></center>
 </div><!--- Slutt overskrift --->
-
 <div id="hoved_artikkel" class="grid_14 alpha omega"><!--- Start hoved_artikkel --->
-  <a href="">
+  <a href="#hoved_artikkel">
+
     <h1>Lorem Ipsum</h1>
-    <%= image_tag ("article/art1.png")%>
+    <img src="images/article/1.png">
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque in sem neque, sit amet auctor lacus. Duis dapibus nisl a erat ultricies accumsan. Duis id volutpat nisi. Vivamus magna libero, pretium nec pulvinar vel, molestie non nunc. Nullam eget imperdiet purus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis erat vitae enim varius viverra.</p></a>
 </div><!--- Slutt hoved_artikkel --->
 
-<div id="artikkel" class="grid_7 alpha"><!--- Start artikkel --->
-  <a href="#artikkel">
-    <h1>Lorem Ipsum</h1>
-    <%= image_tag ("article/art2.png") %>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque in sem neque, sit amet auctor lacus. Duis dapibus nisl a erat ultricies accumsan. Duis id volutpat nisi. Vivamus magna libero, pretium nec pulvinar vel, molestie non nunc. Nullam eget imperdiet purus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis erat vitae enim varius viverra.</p></a>
-</div><!--- Slutt artikkel --->
-
-<div id="artikkel" class="grid_7 omega"><!--- Start artikkel --->
-  <a href="#artikkel">
-    <h1>Lorem Ipsum</h1>
-    <%= image_tag ("article/art3.png") %>
-
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque in sem neque, sit amet auctor lacus. Duis dapibus nisl a erat ultricies accumsan. Duis id volutpat nisi. Vivamus magna libero, pretium nec pulvinar vel, molestie non nunc. Nullam eget imperdiet purus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis erat vitae enim varius viverra.</p></a>
-</div><!--- Slutt artikkel --->
-
-<div id="artikkel" class="grid_7 alpha"><!--- Start artikkel --->
-  <a href="#artikkel">
-    <h1>Lorem Ipsum</h1>
-    <%= image_tag ("article/art4.png") %>
-
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque in sem neque, sit amet auctor lacus. Duis dapibus nisl a erat ultricies accumsan. Duis id volutpat nisi. Vivamus magna libero, pretium nec pulvinar vel, molestie non nunc. Nullam eget imperdiet purus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis erat vitae enim varius viverra.</p></a>
-</div><!--- Slutt artikkel --->
-
-<div id="artikkel" class="grid_7 omega"><!--- Start artikkel --->
-  <a href="#artikkel">
-    <h1>Lorem Ipsum</h1>
-    <%= image_tag ("article/art5.png") %>
-
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque in sem neque, sit amet auctor lacus. Duis dapibus nisl a erat ultricies accumsan. Duis id volutpat nisi. Vivamus magna libero, pretium nec pulvinar vel, molestie non nunc. Nullam eget imperdiet purus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis erat vitae enim varius viverra.</p></a>
-</div><!--- Slutt artikkel --->
 
 
-<%= link_to 'New Article', new_article_path %>
+<%counter = 0
+Article.find(:all).each do |article| %>
+    <%if article.main_article %>
+      <div id="hoved_artikkel" class="grid_14 alpha omega">
+    <%else%>
+      <%classtext = "grid_7 "+  (counter%2 == 0 ? "alpha" : "omega")
+        counter +=1
+      %>
+      <div id="artikkel" class="<%=classtext%>">
+    <%end%>
+      <a href="<%=article_path(article, :tab=>params[:tab])%>">
+      <h1><%=article.title%></h1>
+      <%#=image_tag("article/"+article.id.to_s+".png") %>
+      <img src="images/article/2.png" />
+      <p><%=article.ingress%></p>
+      </a>
+    </div>
+  <%end%>
+
+
+
+
+
+
+  <%#= link_to 'New Article', new_article_path %>

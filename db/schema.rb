@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100806113753) do
+ActiveRecord::Schema.define(:version => 20100806150727) do
 
   create_table "articles", :force => true do |t|
     t.string   "title_en"
@@ -28,6 +28,41 @@ ActiveRecord::Schema.define(:version => 20100806113753) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "main_article"
+  end
+
+  create_table "pages", :force => true do |t|
+    t.string   "title_en"
+    t.string   "title_no"
+    t.text     "ingress_en"
+    t.text     "ingress_no"
+    t.text     "body_en"
+    t.text     "body_no"
+    t.string   "tag"
+    t.boolean  "deleted"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "sublinks", :force => true do |t|
+    t.integer  "tab_id"
+    t.string   "title_en"
+    t.string   "title_no"
+    t.string   "url"
+    t.string   "external_url"
+    t.integer  "order"
+    t.boolean  "deleted"
+    t.integer  "page_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "tabs", :force => true do |t|
+    t.string   "name_en"
+    t.string   "name_no"
+    t.string   "tag"
+    t.integer  "order"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

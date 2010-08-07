@@ -1,5 +1,6 @@
+
 body {
-	background: #1a96b8  url(../images/bg.png) repeat-x;
+	background: #1a96b8  url(../images/bg.png) repeat-x !important;
 	color: #333;
 	font-size: 11px;
 }
@@ -184,7 +185,7 @@ a:hover {
 	font-weight: bold;
 }
 
-#hoved_artikkel images {
+#hoved_artikkel img {
 	margin: 10px 10px 5px 10px;
 	height: 196px;
 	width: 530px;
@@ -209,7 +210,7 @@ a:hover {
 	font-weight: bold;
 }
 
-#artikkel images {
+#artikkel img {
 	margin: 10px 10px 5px 10px;
 	height: 120px;
 	width: 250px;

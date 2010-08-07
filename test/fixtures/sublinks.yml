@@ -1,0 +1,21 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  tab: 
+  title: 
+  title_no: MyString
+  url: MyString
+  external_url: MyString
+  order: 1
+  deleted: false
+  page: 
+
+two:
+  tab: 
+  title: 
+  title_no: MyString
+  url: MyString
+  external_url: MyString
+  order: 1
+  deleted: false
+  page: 

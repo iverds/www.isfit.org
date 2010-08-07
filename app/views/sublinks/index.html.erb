@@ -1,0 +1,37 @@
+<h1>Listing sublinks</h1>
+
+<table>
+  <tr>
+    <th>Tab</th>
+    <th>Title</th>
+    <th>Title no</th>
+    <th>Url</th>
+    <th>External url</th>
+    <th>Order</th>
+    <th>Deleted</th>
+    <th>Page</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @sublinks.each do |sublink| %>
+  <tr>
+    <td><%= sublink.tab %></td>
+    <td><%= sublink.title %></td>
+    <td><%= sublink.title_no %></td>
+    <td><%= sublink.url %></td>
+    <td><%= sublink.external_url %></td>
+    <td><%= sublink.order %></td>
+    <td><%= sublink.deleted %></td>
+    <td><%= sublink.page %></td>
+    <td><%= link_to 'Show', sublink %></td>
+    <td><%= link_to 'Edit', edit_sublink_path(sublink) %></td>
+    <td><%= link_to 'Destroy', sublink, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Sublink', new_sublink_path %>

@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title en:</b>
+  <%= @page.title_en %>
+</p>
+
+<p>
+  <b>Title no:</b>
+  <%= @page.title_no %>
+</p>
+
+<p>
+  <b>Ingress en:</b>
+  <%= @page.ingress_en %>
+</p>
+
+<p>
+  <b>Ingress no:</b>
+  <%= @page.ingress_no %>
+</p>
+
+<p>
+  <b>Body en:</b>
+  <%= @page.body_en %>
+</p>
+
+<p>
+  <b>Body no:</b>
+  <%= @page.body_no %>
+</p>
+
+<p>
+  <b>Tag:</b>
+  <%= @page.tag %>
+</p>
+
+<p>
+  <b>Deleted:</b>
+  <%= @page.deleted %>
+</p>
+
+
+<%= link_to 'Edit', edit_page_path(@page) %> |
+<%= link_to 'Back', pages_path %>

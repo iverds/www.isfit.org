@@ -1,0 +1,49 @@
+<%= form_for(@sublink) do |f| %>
+  <% if @sublink.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@sublink.errors.count, "error") %> prohibited this sublink from being saved:</h2>
+
+      <ul>
+      <% @sublink.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :tab %><br />
+    <%= f.text_field :tab %>
+  </div>
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :title_no %><br />
+    <%= f.text_field :title_no %>
+  </div>
+  <div class="field">
+    <%= f.label :url %><br />
+    <%= f.text_field :url %>
+  </div>
+  <div class="field">
+    <%= f.label :external_url %><br />
+    <%= f.text_field :external_url %>
+  </div>
+  <div class="field">
+    <%= f.label :order %><br />
+    <%= f.text_field :order %>
+  </div>
+  <div class="field">
+    <%= f.label :deleted %><br />
+    <%= f.check_box :deleted %>
+  </div>
+  <div class="field">
+    <%= f.label :page %><br />
+    <%= f.text_field :page %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

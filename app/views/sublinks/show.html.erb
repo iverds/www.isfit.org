@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Tab:</b>
+  <%= @sublink.tab %>
+</p>
+
+<p>
+  <b>Title:</b>
+  <%= @sublink.title %>
+</p>
+
+<p>
+  <b>Title no:</b>
+  <%= @sublink.title_no %>
+</p>
+
+<p>
+  <b>Url:</b>
+  <%= @sublink.url %>
+</p>
+
+<p>
+  <b>External url:</b>
+  <%= @sublink.external_url %>
+</p>
+
+<p>
+  <b>Order:</b>
+  <%= @sublink.order %>
+</p>
+
+<p>
+  <b>Deleted:</b>
+  <%= @sublink.deleted %>
+</p>
+
+<p>
+  <b>Page:</b>
+  <%= @sublink.page %>
+</p>
+
+
+<%= link_to 'Edit', edit_sublink_path(@sublink) %> |
+<%= link_to 'Back', sublinks_path %>
