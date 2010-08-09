@@ -8,6 +8,8 @@ WwwIsfitOrg::Application.routes.draw do
 
     resources :articles
 
+    resources :participants
+
    
   end
   root :to => "articles#index" , :tab=>"news"

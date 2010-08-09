@@ -1,0 +1,149 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  registered_time: 2010-08-08 02:17:14
+  checked_in: 2010-08-08 02:17:14
+  picked_up: 2010-08-08 02:17:14
+  first_name: MyString
+  middle_name: MyString
+  last_name: MyString
+  address1: MyText
+  address2: MyText
+  zipcode: MyString
+  city: MyString
+  country: 
+  phone: MyString
+  email: MyString
+  fax: MyString
+  nationality: MyString
+  birthday: 2010-08-08
+  sex: MyString
+  university: MyString
+  field_of_study: MyString
+  org_name: MyString
+  org_function: MyString
+  hear_about_isfit: MyString
+  hear_about_isfit_other: MyString
+  workshop1: 1
+  workshop2: 1
+  workshop3: 1
+  essay1: MyText
+  essay2: MyText
+  travel_apply: 1
+  travel_essay: MyText
+  travel_amount: MyString
+  travel_nosupport_other: 1
+  travel_nosupport_cancome: 1
+  participant_grade: 1
+  participant_comment: MyText
+  participant_functionary_id: 1
+  theme_grade1: 1
+  theme_grade2: 1
+  theme_comment: MyText
+  theme_functionary_id: 1
+  password: MyString
+  final_workshop: 1
+  invited: 1
+  travel_assigned: 1
+  travel_assigned_amount: 1
+  travel_comment: MyText
+  host_id: 1
+  last_login: 2010-08-08 02:17:14
+  notified_invitation: 1
+  notified_travel_support: 1
+  notified_rejection: 1
+  notified_no_travel_support: 1
+  notified_rejection_again: 1
+  arrivel_date: 2010-08-08
+  arrivel_place: MyString
+  arrival_time: 2010-08-08 02:17:14
+  arrival_carrier: MyString
+  arrival_isfit_trans: 1
+  arrival_airline: MyString
+  arrival_flight_number: MyString
+  departure_date: 2010-08-08
+  departure_time: 2010-08-08 02:17:14
+  departure_carrier: MyString
+  departure_isfit_trans: 1
+  departure_place: MyString
+  notified_custom: 1
+  request_travel: 2010-08-08 02:17:14
+  accept_travel: 1
+  accepted_travel_time: 2010-08-08 02:17:14
+  bed: 1
+  bedding: 1
+  apecial_invite: 1
+
+two:
+  registered_time: 2010-08-08 02:17:14
+  checked_in: 2010-08-08 02:17:14
+  picked_up: 2010-08-08 02:17:14
+  first_name: MyString
+  middle_name: MyString
+  last_name: MyString
+  address1: MyText
+  address2: MyText
+  zipcode: MyString
+  city: MyString
+  country: 
+  phone: MyString
+  email: MyString
+  fax: MyString
+  nationality: MyString
+  birthday: 2010-08-08
+  sex: MyString
+  university: MyString
+  field_of_study: MyString
+  org_name: MyString
+  org_function: MyString
+  hear_about_isfit: MyString
+  hear_about_isfit_other: MyString
+  workshop1: 1
+  workshop2: 1
+  workshop3: 1
+  essay1: MyText
+  essay2: MyText
+  travel_apply: 1
+  travel_essay: MyText
+  travel_amount: MyString
+  travel_nosupport_other: 1
+  travel_nosupport_cancome: 1
+  participant_grade: 1
+  participant_comment: MyText
+  participant_functionary_id: 1
+  theme_grade1: 1
+  theme_grade2: 1
+  theme_comment: MyText
+  theme_functionary_id: 1
+  password: MyString
+  final_workshop: 1
+  invited: 1
+  travel_assigned: 1
+  travel_assigned_amount: 1
+  travel_comment: MyText
+  host_id: 1
+  last_login: 2010-08-08 02:17:14
+  notified_invitation: 1
+  notified_travel_support: 1
+  notified_rejection: 1
+  notified_no_travel_support: 1
+  notified_rejection_again: 1
+  arrivel_date: 2010-08-08
+  arrivel_place: MyString
+  arrival_time: 2010-08-08 02:17:14
+  arrival_carrier: MyString
+  arrival_isfit_trans: 1
+  arrival_airline: MyString
+  arrival_flight_number: MyString
+  departure_date: 2010-08-08
+  departure_time: 2010-08-08 02:17:14
+  departure_carrier: MyString
+  departure_isfit_trans: 1
+  departure_place: MyString
+  notified_custom: 1
+  request_travel: 2010-08-08 02:17:14
+  accept_travel: 1
+  accepted_travel_time: 2010-08-08 02:17:14
+  bed: 1
+  bedding: 1
+  apecial_invite: 1

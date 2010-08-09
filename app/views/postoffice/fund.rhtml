@@ -1,0 +1,42 @@
+<h2><%= @name%></h2>
+<p><strong>Project initiator:</strong> <%=@initiator %></p>
+<p>
+<%if @isfit_connection == 1 %>
+<!-- Functionary -->
+Functionary in <%=@isfit_connection_year%>
+<%elsif  @isfit_connection == 2 %>
+<!-- Participant -->
+Participant in <%=@isfit_connection_year%>
+<%else%>
+<!-- neither participant nor functionary -->
+Applicant has never been a participant or a functionary in ISFiT!
+<%end%>
+</p>
+
+<p><strong>E-mail:</strong> <%= @email%></p>
+<p><strong>Address:</strong> <%= @address%></p>
+<p><strong>Country:</strong> <%= @country%></p>
+<p><strong>Phone:</strong> <%=@phone%></p>
+<p><strong>Amount applied for:</strong> <%=@amount%></p>
+<p><strong>Account details:</strong> <%=@account_details%></p>
+<h3>Statement of purpose</h3>
+<%if @purpose_text == ""%>
+Attached...
+<%else%>
+	<%=@purpose_text%>
+<%end%>
+<h3>Plans for the organisation or project</h3>
+<%if @plans_text == ""%>
+Attached...
+<%else%>
+	<%=@plans_text%>
+<%end%>
+<h3>Plans for further funding</h3>
+<%=@further_funding_plan%>
+
+
+
+<h3>Other information of interest</h3>
+<p><%=@other_info%></p>
+
+

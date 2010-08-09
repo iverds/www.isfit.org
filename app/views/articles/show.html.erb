@@ -1,65 +1,20 @@
-<p id="notice"><%= notice %></p>
-
+<div style="float:right">
+  <%=image_tag("article/2.png")%>
+</div>
+<h3>
+  <%= @article.title %>
+</h3>
+<br />
 <p>
-  <b>Title en:</b>
-  <%= @article.title_en %>
+<%= @article.created_at.strftime("%F")%>
 </p>
-
+<br />
 <p>
-  <b>Title no:</b>
-  <%= @article.title_no %>
+  <b><%= @article.ingress_en %></b>
 </p>
-
+<br />
 <p>
-  <b>Ingress en:</b>
-  <%= @article.ingress_en %>
+  <%=raw (@article.body_en).gsub("\n", "<br />") %>
 </p>
-
-<p>
-  <b>Ingress no:</b>
-  <%= @article.ingress_no %>
-</p>
-
-<p>
-  <b>Body en:</b>
-  <%= @article.body_en %>
-</p>
-
-<p>
-  <b>Body no:</b>
-  <%= @article.body_no %>
-</p>
-
-<p>
-  <b>List:</b>
-  <%= @article.list %>
-</p>
-
-<p>
-  <b>Weight:</b>
-  <%= @article.weight %>
-</p>
-
-<p>
-  <b>Deleted:</b>
-  <%= @article.deleted %>
-</p>
-
-<p>
-  <b>Press release:</b>
-  <%= @article.press_release %>
-</p>
-
-<p>
-  <b>Sub title en:</b>
-  <%= @article.sub_title_en %>
-</p>
-
-<p>
-  <b>Sub title no:</b>
-  <%= @article.sub_title_no %>
-</p>
-
-
-<%= link_to 'Edit', edit_article_path(@article) %> |
+<%= link_to 'Edit', edit_article_path(@article, :tab=>params[:tab]) %> |
 <%= link_to 'Back', articles_path %>

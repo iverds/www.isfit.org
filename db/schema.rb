@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100807223903) do
+ActiveRecord::Schema.define(:version => 20100808003033) do
 
   create_table "articles", :force => true do |t|
     t.string   "title_en"
@@ -28,6 +28,13 @@ ActiveRecord::Schema.define(:version => 20100807223903) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "main_article"
+  end
+
+  create_table "countries", :force => true do |t|
+    t.string   "name"
+    t.integer  "region_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "events", :force => true do |t|
@@ -60,6 +67,89 @@ ActiveRecord::Schema.define(:version => 20100807223903) do
     t.datetime "updated_at"
   end
 
+  create_table "participants", :force => true do |t|
+    t.datetime "registered_time"
+    t.datetime "checked_in"
+    t.datetime "picked_up"
+    t.string   "first_name"
+    t.string   "middle_name"
+    t.string   "last_name"
+    t.text     "address1"
+    t.text     "address2"
+    t.string   "zipcode"
+    t.string   "city"
+    t.integer  "country_id"
+    t.string   "phone"
+    t.string   "email"
+    t.string   "fax"
+    t.string   "nationality"
+    t.date     "birthdate"
+    t.string   "sex"
+    t.string   "university"
+    t.string   "field_of_study"
+    t.string   "org_name"
+    t.string   "org_function"
+    t.string   "hear_about_isfit"
+    t.string   "hear_about_isfit_other"
+    t.integer  "workshop1"
+    t.integer  "workshop2"
+    t.integer  "workshop3"
+    t.text     "essay1"
+    t.text     "essay2"
+    t.integer  "travel_apply"
+    t.text     "travel_essay"
+    t.string   "travel_amount"
+    t.integer  "travel_nosupport_other"
+    t.integer  "travel_nosupport_cancome"
+    t.integer  "participant_grade"
+    t.text     "participant_comment"
+    t.integer  "participant_functionary_id"
+    t.integer  "theme_grade1"
+    t.integer  "theme_grade2"
+    t.text     "theme_comment"
+    t.integer  "theme_functionary_id"
+    t.string   "password"
+    t.integer  "final_workshop"
+    t.integer  "invited"
+    t.integer  "travel_assigned"
+    t.integer  "travel_assigned_amount"
+    t.text     "travel_comment"
+    t.integer  "host_id"
+    t.datetime "last_login"
+    t.integer  "notified_invitation"
+    t.integer  "notified_travel_support"
+    t.integer  "notified_rejection"
+    t.integer  "notified_no_travel_support"
+    t.integer  "notified_rejection_again"
+    t.date     "arrivel_date"
+    t.string   "arrivel_place"
+    t.time     "arrival_time"
+    t.string   "arrival_carrier"
+    t.integer  "arrival_isfit_trans"
+    t.string   "arrival_airline"
+    t.string   "arrival_flight_number"
+    t.date     "departure_date"
+    t.time     "departure_time"
+    t.string   "departure_carrier"
+    t.integer  "departure_isfit_trans"
+    t.string   "departure_place"
+    t.integer  "notified_custom"
+    t.datetime "request_travel"
+    t.integer  "accept_travel"
+    t.datetime "accepted_travel_time"
+    t.integer  "bed"
+    t.integer  "bedding"
+    t.integer  "apecial_invite"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "regions", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "sublinks", :force => true do |t|
     t.integer  "tab_id"
     t.string   "title_en"
@@ -78,6 +168,13 @@ ActiveRecord::Schema.define(:version => 20100807223903) do
     t.string   "name_no"
     t.string   "tag"
     t.integer  "order"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "workshops", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

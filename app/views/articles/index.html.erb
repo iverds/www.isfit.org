@@ -1,38 +1,22 @@
 <div id="overskrift" class="grid_14 alpha omega"><!--- Start overskrift --->
   <center><%=t('article.header')%></center>
 </div><!--- Slutt overskrift --->
-<div id="hoved_artikkel" class="grid_14 alpha omega"><!--- Start hoved_artikkel --->
-  <a href="#hoved_artikkel">
-
-    <h1>Lorem Ipsum</h1>
-    <img src="images/article/1.png">
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque in sem neque, sit amet auctor lacus. Duis dapibus nisl a erat ultricies accumsan. Duis id volutpat nisi. Vivamus magna libero, pretium nec pulvinar vel, molestie non nunc. Nullam eget imperdiet purus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis erat vitae enim varius viverra.</p></a>
-</div><!--- Slutt hoved_artikkel --->
-
-
-
 <%counter = 0
 Article.find(:all).each do |article| %>
-    <%if article.main_article %>
-      <div id="hoved_artikkel" class="grid_14 alpha omega">
+  <%if article.main_article %>
+    <div id="hoved_artikkel" class="grid_14 alpha omega">
     <%else%>
       <%classtext = "grid_7 "+  (counter%2 == 0 ? "alpha" : "omega")
-        counter +=1
-      %>
-      <div id="artikkel" class="<%=classtext%>">
+      counter +=1
+    %>
+    <div id="artikkel" class="<%=classtext%>">
     <%end%>
-      <a href="<%=article_path(article, :tab=>params[:tab])%>">
+    <a href="<%=article_path(article, :tab=>params[:tab])%>">
       <h1><%=article.title%></h1>
-      <%#=image_tag("article/"+article.id.to_s+".png") %>
-      <img src="images/article/2.png" />
+      <%=image_tag("article/"+article.id.to_s+".png") %>
       <p><%=article.ingress%></p>
-      </a>
-    </div>
-  <%end%>
+    </a>
+  </div>
+<%end%>
 
-
-
-
-
-
-  <%#= link_to 'New Article', new_article_path %>
+<%= link_to 'New Article', new_article_path %>

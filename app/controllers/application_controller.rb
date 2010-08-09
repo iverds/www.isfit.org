@@ -1,4 +1,11 @@
+require 'recaptcha'
+
 class ApplicationController < ActionController::Base
+#  include ReCaptcha::AddHelper
+
+
+  helper :all
+
   protect_from_forgery
   before_filter  :set_language
   def set_language

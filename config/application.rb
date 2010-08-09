@@ -6,6 +6,11 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(:default, Rails.env) if defined?(Bundler)
 
+ENV['RECAPTCHA_PUBLIC_KEY']  = '6LfVsgEAAAAAAC3tuHnW3yw8bvIIslOc97LubOHy'
+ENV['RECAPTCHA_PRIVATE_KEY'] = '6LfVsgEAAAAAAD0gCf2UZFm4UmKfBQ2PQHMVWgUb'
+
+
+
 module WwwIsfitOrg
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
