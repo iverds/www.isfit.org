@@ -1,0 +1,79 @@
+<%= stylesheet_link_tag "calendar" %>
+		<%
+		year= @year
+		month = @month
+		if year == nil
+			month = (Time.new).month
+	                year = (Time.new).year
+		end
+		#days and weeks vars now ...
+		running_day = ((Date.new(year, 12, 1) << (12-month)).wday)
+		if running_day == 0
+			running_day = 6
+		else
+			running_day -= 1
+		end
+		rows = 0
+			
+		days_in_month =  (Date.new(year, 12, 31) << (12-month)).day
+		days_in_this_week = 1
+		day_counter = 0
+		%>
+		<!--draw table-->
+		<table cellpadding="0" cellspacing="0" class="calendar">
+		<!--table headings-->
+		<% headings = ['Ma','Ti','On','To','Fr']
+			headingsw = ['L&oslash','S&oslash'] %>
+		<tr class="calendar-row-head">
+			<td class="calendar-day-head">Ma</td>
+			<td class="calendar-day-head">Ti</td>
+			<td class="calendar-day-head">On</td>
+			<td class="calendar-day-head">To</td>
+			<td class="calendar-day-head">Fr</td>
+			<td class="calendar-day-headw">L&oslash;</td>
+			<td class="calendar-day-headw">S&oslash;</td>
+		</tr>
+		<!--row for week one-->
+		<tr class="calendar-row">
+		<%
+			#print "blank" days until the first of the current week
+			for x in 0..(running_day -1)do %>
+				<td class="calendar-day-np">&nbsp;</td>
+			<%	days_in_this_week+=1
+			end
+			#keep going with days....
+			for list_day in (1..days_in_month) do %>
+				<td class="calendar-day"><%= link_to list_day.to_s, :controller=>"events", :action=>"show", :tab=>params[:tab], :year=>year.to_s, :month=>month.to_s, :day=>list_day.to_s %></td>
+				<% if running_day == 6 %>
+					</tr>
+					<% if (day_counter) != days_in_month %>
+						<tr class="calendar-row">
+						
+					<% 
+						rows += 1
+					end
+					running_day = -1
+					days_in_this_week = 0
+				end
+				days_in_this_week+=1
+				running_day+=1
+				day_counter+=1
+			end 
+		
+			#finish the rest of the days in the week
+			if days_in_this_week < 8
+				for x in (1..(8 - days_in_this_week)) do %>
+					<td class="calendar-day-np">&nbsp;</td>
+				<% end
+			end 
+		%>
+		<!--final row -->
+		</tr>
+		<%
+			for row in rows..4 do
+				%><tr class="calendar-row"><td colspan=7>&nbsp;</td></tr><%
+			end
+		%>
+		<tr class="calendar-row"><td style="color:#ffffff" colspan=7><%=Date::MONTHNAMES[month]%></td></tr>
+		<!--end the table-->
+		</table>
