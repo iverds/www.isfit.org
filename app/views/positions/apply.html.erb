@@ -3,7 +3,7 @@
     <p><b><%= flash[:notice] %></p>
   <% end %>
 <p>Fyll ut samtlige felter under og klikk på "Søk nå!" for å levere søknaden.</p>
-<% form_for(@applicant, :url => {:controller => "position", :action => "save"}) do |f| %>
+<% form_for(@applicant, :url => {:controller => "positions", :action => "save"}) do |f| %>
 <div style="float: left; margin-right: 10px">
 <b>Fornavn:</b><br />
 <%= f.text_field :firstname %>

@@ -1,7 +1,6 @@
 WwwIsfitOrg::Application.routes.draw do
 
-  match 'events/:year/:month/:day' => 'events#show', :as => :events
-
+  
   scope "(/:tab)" do
     resources :sublinks
 
@@ -11,7 +10,11 @@ WwwIsfitOrg::Application.routes.draw do
 
     resources :participants
 
-    resources :positions
+    resources :positions do
+      collection do
+       get :apply
+      end
+    end
   end
   root :to => "articles#index" , :tab=>"news"
 
@@ -71,4 +74,10 @@ WwwIsfitOrg::Application.routes.draw do
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id(.:format)))'
   match ':tab(/:controller(/:action(:id)))', :id => /.*/
+
+
+
+  match 'events/:year/:month/:day' => 'events#show', :as => :events
+
+
 end
