@@ -89,9 +89,9 @@
         <div id="boksrod" class="grid_5 alpha omega">
           <h3>Siste fra spp</h3>
           <ul>
-            <%#SppArticle.find(:all).each do |article|%>
-              <li><%#=link_to( article.title_en, "http://www.studentpeaceprize.org/articles/#{article.id}?tab=home", :target=>"_blank" )%></li>
-              <%#end%>
+            <%SppArticle.find(:all).each do |article|%>
+              <li><%=link_to( article.title_en, "http://www.studentpeaceprize.org/articles/#{article.id}?tab=home", :target=>"_blank" )%></li>
+              <%end%>
             </ul>
           </div>
         </div><!--- Slutt rød --->
