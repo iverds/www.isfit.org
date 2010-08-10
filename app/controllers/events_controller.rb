@@ -13,7 +13,7 @@ class EventsController < ApplicationController
   # GET /events/2010/8/1 
   # GET /events/2010/8/1.xml
   def show
-    @events = Event.find(:first, :conditions => "date = "+(Date.new(Integer(params[:year]), Integer(params[:month]), Integer(params[:day]))).to_s)
+    @events = Event.find(:all, :conditions => "date LIKE '"+(Date.new(Integer(params[:year]), Integer(params[:month]), Integer(params[:day]))).to_s+"%'")
 	
     respond_to do |format|
       format.html # show.html.erb 

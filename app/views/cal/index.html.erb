@@ -43,7 +43,7 @@
 			end
 			#keep going with days....
 			for list_day in (1..days_in_month) do %>
-				<td class="calendar-day"><%= link_to list_day.to_s, :controller=>"events", :action=>"show", :tab=>params[:tab], :year=>year.to_s, :month=>month.to_s, :day=>list_day.to_s %></td>
+				<td class="calendar-day"><%= link_to list_day.to_s, url_for(:controller=>"events", :action=>"show", :tab=>params[:tab], :year=>year.to_s, :month=>month.to_s, :day=>list_day.to_s) %></td>
 				<% if running_day == 6 %>
 					</tr>
 					<% if (day_counter) != days_in_month %>
