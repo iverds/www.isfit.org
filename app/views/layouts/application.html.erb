@@ -39,7 +39,10 @@
           end
           link = nil
           if tab.sublinks.first.page_id == 0
-            link = root_path
+            if tab.sublinks.first.url != nil
+            arr = tab.sublinks.first.url.partition("#")
+            link =  url_for(:controller=>arr[0], :action=>arr[2], :tab=>tab.tag) 
+            end
           else
             link = page_path(tab.sublinks.first.page, :tab=>tab.tag)
           end
@@ -57,7 +60,10 @@
         active = false
         link = nil
         if sub.page_id == 0
-          link = sub.url
+          if sub.url != nil
+            arr = sub.url.partition("#")
+            link =  url_for(:controller=>arr[0], :action=>arr[2], :tab=>current_tab.tag) 
+          end
         else
           link = page_path(sub.page, :tab=>current_tab.tag)
         end
@@ -82,9 +88,7 @@
       <div id="boksbla_bg" class="grid_5 alpha omega"><!--- Start blå --->
         <div id="boksbla" class="grid_5 alpha omega">
           <%=render :template => 'cal/index' %>
-	  <br />
-          <%= current_tab.name_en %><br />
-        </div>
+	      </div>
       </div><!--- Slutt blå --->
       <div id="boksrod_bg" class="grid_5 alpha omega"><!--- Start rød --->
         <div id="boksrod" class="grid_5 alpha omega">

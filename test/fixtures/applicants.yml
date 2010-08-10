@@ -1,0 +1,65 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  firstname: MyString
+  lastname: MyString
+  mail: MyString
+  phone: 1
+  information: MyText
+  background: MyText
+  position_id_1: 1
+  position_id_2: 1
+  position_id_3: 1
+  heardof: MyText
+  status: 1
+  interview_place_1: MyString
+  interview_place_2: MyString
+  interview_place_3: MyString
+  interview_time_1: 2010-08-11 01:13:38
+  interview_time_2: 2010-08-11 01:13:38
+  interview_time_2: 2010-08-11 01:13:38
+  interview_time_3: 2010-08-11 01:13:38
+  interviewer_id_1_1: 1
+  interviewer_id_1_2: 1
+  interviewer_id_2_1: 1
+  interviewer_id_2_2: 1
+  interviewer_id_3_1: 1
+  interviewer_id_3_2: 1
+  deleted: 1
+  username: MyString
+  password: MyString
+  dn: MyString
+  has_account: 1
+  is_notified: 1
+
+two:
+  firstname: MyString
+  lastname: MyString
+  mail: MyString
+  phone: 1
+  information: MyText
+  background: MyText
+  position_id_1: 1
+  position_id_2: 1
+  position_id_3: 1
+  heardof: MyText
+  status: 1
+  interview_place_1: MyString
+  interview_place_2: MyString
+  interview_place_3: MyString
+  interview_time_1: 2010-08-11 01:13:38
+  interview_time_2: 2010-08-11 01:13:38
+  interview_time_2: 2010-08-11 01:13:38
+  interview_time_3: 2010-08-11 01:13:38
+  interviewer_id_1_1: 1
+  interviewer_id_1_2: 1
+  interviewer_id_2_1: 1
+  interviewer_id_2_2: 1
+  interviewer_id_3_1: 1
+  interviewer_id_3_2: 1
+  deleted: 1
+  username: MyString
+  password: MyString
+  dn: MyString
+  has_account: 1
+  is_notified: 1

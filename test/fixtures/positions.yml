@@ -1,0 +1,21 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  title_en: MyString
+  title_no: MyString
+  person_id: 1
+  description_en: MyText
+  description_no: MyText
+  group_dn: MyString
+  admission_id: 1
+  group_id: 1
+
+two:
+  title_en: MyString
+  title_no: MyString
+  person_id: 1
+  description_en: MyText
+  description_no: MyText
+  group_dn: MyString
+  admission_id: 1
+  group_id: 1

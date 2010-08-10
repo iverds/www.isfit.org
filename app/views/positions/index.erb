@@ -1,0 +1,138 @@
+<%if true%>
+Vi har dessverre ingen opptak for tiden, men følg med på nettsiden for nye oppdateringer. Neste opptak vil være 30. august.
+<%else%>
+<% if Language.to_s == "no" %>
+<h1>Funksjonæropptak for ISFiT 2011</h1>
+<p><b>Vil du engasjere verden?</b></p>
+<p><b>Søknadsfrist 10 mars 23:59</b></p>
+<% else %>
+<!--<h2>Apply for ISFiT Volunteer!</h2>
+<p>Do you want new challenges? Do you want to make friends for life and have experiences you'll never forget? ISFiT is currently looking for more volunteers.</p>
+<p>Find just the right position for you, and contribute in creating your very own part of the festival! As a volunteer you'll be working closely together with the other members og your group, making cooperativeness and high spirits valuable characteristics.</p>
+<p>No previous participation in ISFiT or other student organizations is required to apply. Creativity, commitment and motivation is just as important as knowledge and experience. Training and good cooperation gives you just the knowledge you need when you need it.</p>
+<p>Do you want to see your ideas get realized and make ISFiT 2009 a great experience for everyone involved? Apply now!</p>
+
+<p><b>Application Deadline: November 2</b></p>
+-->
+<% end %>
+<% @sections.each { |section| %>
+<%if section.getPositions(Language.to_s) != []%>
+<p><b><%= eval("section.name_#{Language}") %></b> - <%= link_to(Language.to_s == "no" ? 'Les mer' : 'Read more', :action => :sections, :anchor => section.id) %></p>
+<ul>
+<% section.getPositions(Language.to_s).each { |position| %>
+<li><%= link_to(eval("position.title_#{Language}"), {:action => "apply", :id => position.id}) %></li>
+<% } %>
+</ul>
+<br>
+<%end%>
+<% } %>
+<% if Language.to_s == "no" %>
+<h3>Søk på stillinger</h3>
+<p>Fyll ut samtlige felter under og klikk på "Søk nå!" for å søke.</p>
+<% else %>
+<h3>Apply for positions</h3>
+<p>Fill in on and all fields in the below form and press "Apply now!" to apply.</p>
+<% end %>
+<%
+
+	str = {}
+	if Language.to_s == "en"
+		str[:first] = "First choice"
+		str[:second] = "Second choice"
+		str[:third] = "Third choice"
+		str[:firstname] = "First name"
+		str[:lastname] = "Last name"
+		str[:emailaddress] = "E-mail address"
+		str[:atschool] = "at your school"
+		str[:phone] = "Phone number"
+		str[:about] = "Information about yourself"
+		str[:background] = "Relevant experience"
+		str[:apply] = "Apply now!"
+		str[:none] = "None"
+		str[:mandatory] = "mandatory"
+		str[:optional] = "optional"
+	else
+		str[:first] = "Førstevalg"
+		str[:second] = "Andrevalg"
+		str[:third] = "Tredjevalg"
+		str[:firstname] = "Fornavn"
+		str[:lastname] = "Etternavn"
+		str[:emailaddress] = "E-postadresse"
+		str[:atschool] = "ved studiested"
+		str[:phone] = "Mobiltelefonnr."
+		str[:about] = "Informasjon om deg"
+		str[:background] = "Relevant bakgrunn"
+		str[:apply] = "Søk nå!"
+		str[:none] = "Inget"
+		str[:mandatory] = "obligatorisk"
+		str[:optional] = "valgfritt"
+	end
+
+%>
+<% form_tag() do %>
+<%= hidden_field(:position, :id) %>
+<b><%= str[:first] %></b> (<%= str[:mandatory] %>)<br />
+<select name="first">
+<option value="-1"><%= str[:none] %></option>
+<% @sections.each { |section| %>
+<%if section.getPositions(Language.to_s) != []%>
+<optgroup label="<%= eval("section.name_#{Language}") %>">
+<% section.getPositions(Language.to_s).each { |position| %>
+<option value="<%= position.id %>"<%= params[:first] == "#{position.id}" ? ' selected="yes"' : '' %>><%= eval("position.title_#{Language}") 
+	%></option>
+<% } %>
+</optgroup>
+<%end%>
+<% } %>
+<%= params.inspect %>
+</select>
+<br /><br />
+<b><%= str[:second] %></b> (<%= str[:optional] %>)<br />
+<select name="second">
+<option value="-1"><%= str[:none] %></option>
+<% @sections.each { |section| %>
+<%if section.getPositions(Language.to_s) != []%>
+<optgroup label="<%= eval("section.name_#{Language}") %>">
+<% section.getPositions(Language.to_s).each { |position| %>
+<option value="<%= position.id %>"<%= params[:second] == "#{position.id}" ? ' selected="yes"' : '' %>><%= eval("position.title_#{Language}") 
+	%></option>
+<% } %>
+</optgroup>
+<%end%>
+<% } %>
+</select>
+<br /><br />
+<b><%= str[:third] %></b> (<%= str[:optional] %>)<br />
+<select name="third">
+<option value="-1"><%= str[:none] %></option>
+<% @sections.each { |section| %>
+<%if section.getPositions(Language.to_s) != []%>
+	<optgroup label="<%= eval("section.name_#{Language}") %>">
+	<% section.getPositions(Language.to_s).each { |position| %>
+	<option value="<%= position.id %>"<%= params[:third] == "#{position.id}" ? ' selected="yes"' : '' %>><%= eval("position.title_#{Language}") 
+	%></option>
+	<% } %>
+	</optgroup>
+<%end%>
+<% } %>
+</select>
+<br /><br />
+<b><%= str[:firstname] %></b><br />
+<%= text_field("applicant", "firstname") %><br /><br />
+<b><%= str[:lastname] %></b><br />
+<%= text_field("applicant", "lastname") %><br />
+<br />
+<b><%= str[:emailaddress] %></b> (<%= str[:atschool] %>)<br />
+<%= text_field("applicant", "mail") %><br /><br />
+<b><%= str[:phone] %></b><br />
+<%= text_field("applicant", "phone") %>
+<br /><br />
+<b><%= str[:about] %></b><br />
+<%= text_area("applicant", "information", :cols => 80, :rows => 12) %>
+<br /><br />
+<b><%= str[:background] %></b><br />
+<%= text_area("applicant", "background", :cols => 80, :rows => 12) %>
+<br /><br />
+<%= submit_tag(str[:apply]) %>
+<% end %>
+<% end %>

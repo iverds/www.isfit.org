@@ -10,7 +10,41 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100808003033) do
+ActiveRecord::Schema.define(:version => 20100810231810) do
+
+  create_table "applicants", :force => true do |t|
+    t.string   "firstname"
+    t.string   "lastname"
+    t.string   "mail"
+    t.integer  "phone"
+    t.text     "information"
+    t.text     "background"
+    t.integer  "position_id_1"
+    t.integer  "position_id_2"
+    t.integer  "position_id_3"
+    t.text     "heardof"
+    t.integer  "status"
+    t.string   "interview_place_1"
+    t.string   "interview_place_2"
+    t.string   "interview_place_3"
+    t.datetime "interview_time_1"
+    t.datetime "interview_time_2"
+    t.datetime "interview_time_3"
+    t.integer  "interviewer_id_1_1"
+    t.integer  "interviewer_id_1_2"
+    t.integer  "interviewer_id_2_1"
+    t.integer  "interviewer_id_2_2"
+    t.integer  "interviewer_id_3_1"
+    t.integer  "interviewer_id_3_2"
+    t.integer  "deleted"
+    t.string   "username"
+    t.string   "password"
+    t.string   "dn"
+    t.integer  "has_account"
+    t.integer  "is_notified"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "articles", :force => true do |t|
     t.string   "title_en"
@@ -50,6 +84,11 @@ ActiveRecord::Schema.define(:version => 20100808003033) do
     t.boolean  "important"
     t.boolean  "visible"
     t.string   "url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "groups", :force => true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -144,8 +183,39 @@ ActiveRecord::Schema.define(:version => 20100808003033) do
     t.datetime "updated_at"
   end
 
+  create_table "pictures", :force => true do |t|
+    t.string   "image_text_en"
+    t.string   "image_text_no"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "main_picture_file_name"
+    t.string   "main_picture_content_type"
+    t.integer  "main_picture_file_size"
+    t.datetime "main_picture_updated_at"
+  end
+
+  create_table "positions", :force => true do |t|
+    t.string   "title_en"
+    t.string   "title_no"
+    t.integer  "person_id"
+    t.text     "description_en"
+    t.text     "description_no"
+    t.string   "group_dn"
+    t.integer  "admission_id"
+    t.integer  "group_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "regions", :force => true do |t|
     t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "sections", :force => true do |t|
+    t.string   "name_no"
+    t.string   "name_en"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

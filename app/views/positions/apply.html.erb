@@ -1,0 +1,53 @@
+<h1>Søknadsskjema</h1
+  <% if flash[:notice] %>
+    <p><b><%= flash[:notice] %></p>
+  <% end %>
+<p>Fyll ut samtlige felter under og klikk på "Søk nå!" for å levere søknaden.</p>
+<% form_for(@applicant, :url => {:controller => "position", :action => "save"}) do |f| %>
+<div style="float: left; margin-right: 10px">
+<b>Fornavn:</b><br />
+<%= f.text_field :firstname %>
+</div>
+<div>
+<b>Etternavn:</b><br />
+<%= f.text_field :lastname %>
+</div>
+<br />
+<div style="float: left; margin-right: 10px">
+  <b>E-postadresse (ved studiested)</b><br />
+<%= f.text_field :mail %>
+</div>
+<div>
+<b>Telefonnummer:</b><br />
+<%= f.text_field :phone %>
+</div>
+<br />
+<p>
+<b>Førstevalg:</b> <i>(obligatorisk)</i><br>
+<%= f.select 'position_id_1', @positions.to_select %>
+</p>
+<p>
+<b>Andrevalg:</b> <i>(frivillig)</i><br>
+<%= f.select 'position_id_2', @positions.to_select %>
+</p>
+<p>
+<b>Tredjevalg:</b> <i>(frivillig)</i><br>
+<%= f.select 'position_id_3', @positions.to_select %>
+</p>
+
+
+<b>Informasjon om deg:</b><br />
+<%= f.text_area("information",:cols => 100, :rows => 10) %>
+<br /><br />
+<b>Relevant bakgrunn:</b><br />
+<%= f.text_area(:background, :cols => 100, :rows => 10) %>
+<br /><br />
+<br /><br />
+<b>Hvordan fikk du høre om ISFiT? </b>
+<%= f.text_area(:heardof, :cols=>100, :rows=>5)%>
+<%= f.submit "Søk nå" %>
+<% end %>
+
+
+
+

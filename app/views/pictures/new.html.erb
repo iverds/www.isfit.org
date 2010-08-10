@@ -1,0 +1,22 @@
+<h1>New picture</h1>
+<%# form_tag '/pictures', :multipart=>true , :class=>"new_picture" , :id=>"new_picture"  do |f|%>
+
+  <br />
+  <%#= file_field_tag :newfile %>
+  <br />
+  <%#=submit_tag "Submit Here!"%>
+<%#end%>
+
+<%form_for(@picture , :html =>
+{:multipart => true}) do |f|%>
+
+<%= hidden_field_tag :format, 'js'%>
+<br />
+<%= f.label :image_text_no %>
+<%= f.text_field :image_text_no %>
+<br />
+  <%#= file_field :picture, :newfile %>
+  <%=f.file_field :main_picture %>
+<br />
+<%=f.submit "Submit AJAX"%> 
+<%end%>

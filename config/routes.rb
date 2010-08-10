@@ -1,6 +1,7 @@
 WwwIsfitOrg::Application.routes.draw do
 
   match 'events/:year/:month/:day' => 'events#show', :as => :events
+
   scope "(/:tab)" do
     resources :sublinks
 
@@ -10,7 +11,7 @@ WwwIsfitOrg::Application.routes.draw do
 
     resources :participants
 
-   
+    resources :positions
   end
   root :to => "articles#index" , :tab=>"news"
 
