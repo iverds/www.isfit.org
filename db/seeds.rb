@@ -23,6 +23,6 @@ ISFiT-president Kine Karlsen sier til NRK at hun er svært fornøyd med kommunen
 
 countries = Country.create(:name=>"Afghanistan", :region_id=>"5")
 
-sections = Section.create([{:name_no=>"Administration", :name_en=>"Administration", :festival_id=>"1"}, {:name_no=>"Culture", :name_en=>"Kultur", :festival_id=>"1"}])
+sections = Section.create([{:name_no=>"Administration", :name_en=>"Administration"}, {:name_no=>"Culture", :name_en=>"Kultur"}])
 
 

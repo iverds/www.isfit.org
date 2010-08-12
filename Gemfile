@@ -9,6 +9,9 @@ gem 'sqlite3-ruby', :require => 'sqlite3'
 gem "recaptcha"
 gem 'mysql', "2.8.1"
 
+gem "paperclip"
+#gem "imagemagick"
+gem "rmagick"
 # Use unicorn as the web server
 # gem 'unicorn'
 

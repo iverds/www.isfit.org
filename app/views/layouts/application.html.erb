@@ -8,7 +8,7 @@
     <%#= stylesheet_link_tag "text" %>
 
     <%= javascript_include_tag :defaults %>
-    <%= javascript_include_tag 'jquery', 'jquery.simplemodal-1.3.5.min'%>
+    <%= javascript_include_tag 'jquery', 'jquery.simplemodal-1.3.5.min', 'imgareaselect'%>
     <%= csrf_meta_tag %>
   </head>
   <body>
@@ -92,8 +92,8 @@
       </div><!--- Slutt blå --->
       <div id="boksrod_bg" class="grid_5 alpha omega"><!--- Start rød --->
         <div id="boksrod" class="grid_5 alpha omega">
-          <h3>Siste fra spp</h3>
-          <ul>
+          <h3 style="color:white">Siste fra spp</h3>
+          <ul style="list-style-type:none">
             <%SppArticle.find(:all).each do |article|%>
               <li><%=link_to( article.title_en, "http://www.studentpeaceprize.org/articles/#{article.id}?tab=home", :target=>"_blank" )%></li>
               <%end%>

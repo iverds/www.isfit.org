@@ -1,0 +1,28 @@
+<script type="text/javascript">
+  $(function () {
+      $('#full').imgAreaSelect({ minWidth: 347, minHeight: 154,aspectRatio: '2.25:1',  handles: true , onSelectEnd: function (img, selection) { $('input[name=x1]').val(selection.x1); $('input[name=y1]').val(selection.y1); $('input[name=x2]').val(selection.x2); $('input[name=y2]').val(selection.y2); } 
+        });
+      $('#half').imgAreaSelect({ minWidth: 220, minHeight: 131,aspectRatio: '1.68:1',  handles: true , onSelectEnd: function (img, selection) { $('input[name=x1_1]').val(selection.x1); $('input[name=y1_1]').val(selection.y1); $('input[name=x2_1]').val(selection.x2); $('input[name=y2_1]').val(selection.y2); } 
+        });
+      });
+    </script>
+
+
+    <h1>Crop picture here:</h1>
+
+    <%=image_tag @picture.original_picture.url, :id=>"full" %>
+    <br />
+    <%=image_tag @picture.original_picture.url, :id=>"half" %>
+    <p></p>
+
+    <%form_tag( {:action => "crop_create", :tab => params[:tab], :picture => @picture.id}) do  %>
+      <%= hidden_field_tag :x1, ""%>
+      <%= hidden_field_tag :y1, ""%>
+      <%= hidden_field_tag :x2, ""%>
+      <%= hidden_field_tag :y2, ""%>
+      <%= hidden_field_tag :x1_1, ""%>
+      <%= hidden_field_tag :y1_1, ""%>
+      <%= hidden_field_tag :x2_1, ""%>
+      <%= hidden_field_tag :y2_1, ""%> 
+      <%= submit_tag 'Save' %>
+    <%end%>

@@ -10,6 +10,12 @@ WwwIsfitOrg::Application.routes.draw do
 
     resources :participants
 
+    resources :pictures do
+      member do
+        get :crop
+      end
+    end
+
     resources :positions do
       collection do
        get :apply

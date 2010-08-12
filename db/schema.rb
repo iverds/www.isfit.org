@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100810231810) do
+ActiveRecord::Schema.define(:version => 20100811205743) do
 
   create_table "applicants", :force => true do |t|
     t.string   "firstname"
@@ -188,10 +188,18 @@ ActiveRecord::Schema.define(:version => 20100810231810) do
     t.string   "image_text_no"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "main_picture_file_name"
-    t.string   "main_picture_content_type"
-    t.integer  "main_picture_file_size"
-    t.datetime "main_picture_updated_at"
+    t.string   "original_picture_file_name"
+    t.string   "original_picture_content_type"
+    t.integer  "original_picture_file_size"
+    t.datetime "original_picture_updated_at"
+    t.string   "half_article_picture_file_name"
+    t.string   "half_article_picture_content_type"
+    t.integer  "half_article_picture_file_size"
+    t.datetime "half_article_picture_updated_at"
+    t.string   "full_article_picture_file_name"
+    t.string   "full_article_picture_content_type"
+    t.integer  "full_article_picture_file_size"
+    t.datetime "full_article_picture_updated_at"
   end
 
   create_table "positions", :force => true do |t|
