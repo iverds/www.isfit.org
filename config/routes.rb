@@ -1,16 +1,24 @@
 WwwIsfitOrg::Application.routes.draw do
 
   
+
   scope "(/:tab)" do
     resources :sublinks
 
     resources :pages
 
-    resources :articles
+    resources :articles do
+      collection do
+       get :new_pic
+       get :crop_main
+      end
+    end
 
     resources :participants
 
-    resources :pictures do
+    resources :chronicles
+
+    resources :photos do
       member do
         get :crop
       end

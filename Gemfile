@@ -12,6 +12,7 @@ gem 'mysql', "2.8.1"
 gem "paperclip"
 #gem "imagemagick"
 gem "rmagick"
+gem "bluecloth"
 # Use unicorn as the web server
 # gem 'unicorn'
 

@@ -1,5 +1,28 @@
-<h1>New article</h1>
+<script>
 
+$(document).ready(function() {
+  $("#stuff_item_id").change(function() {
+    $.post("update_picture.js", $(this).serialize(), null, "script");
+    return false;
+  })
+})
+</script>
+
+
+<h1>New article</h1>
 <%= render 'form' %>
+
+<%=collection_select("stuff", "item_id", @pictures, :id, :description )%>
+<img src="nothing.jpg" id="img_pre" style="float:right" alt="Preview!">
+<h5>Full image:</h5>
+<div id="img_full">
+</div>
+<h5>Image float right:</h5>
+<div id="img_right">
+</div>
+<h5>Image float left:</h5>
+<div id="img_left">
+</div>
+
 
 <%= link_to 'Back', articles_path %>

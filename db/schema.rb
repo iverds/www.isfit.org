@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100811205743) do
+ActiveRecord::Schema.define(:version => 20100813213932) do
 
   create_table "applicants", :force => true do |t|
     t.string   "firstname"
@@ -62,6 +62,19 @@ ActiveRecord::Schema.define(:version => 20100811205743) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "main_article"
+    t.boolean  "published"
+  end
+
+  create_table "chronicles", :force => true do |t|
+    t.string   "title_en"
+    t.string   "title_no"
+    t.text     "ingress_en"
+    t.text     "ingress_no"
+    t.text     "body_en"
+    t.text     "body_no"
+    t.string   "author"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "countries", :force => true do |t|
@@ -183,9 +196,11 @@ ActiveRecord::Schema.define(:version => 20100811205743) do
     t.datetime "updated_at"
   end
 
-  create_table "pictures", :force => true do |t|
+  create_table "photos", :force => true do |t|
     t.string   "image_text_en"
     t.string   "image_text_no"
+    t.string   "description"
+    t.string   "credits"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "original_picture_file_name"

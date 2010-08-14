@@ -1,0 +1,12 @@
+<%@chronicle = Chronicle.find(1)%>
+<h1>  <%= @chronicle.title_en %></h1>
+<h4>  <%= @chronicle.author %></h4>
+
+  <%#= @chronicle.ingress_no %>
+
+<p style="color:white; margin:10px;">
+  <%= @chronicle.body_en %>
+</p>
+
+<%#= link_to 'Edit', edit_chronicle_path(@chronicle) %> 
+<%#= link_to 'Back', chronicles_path %>

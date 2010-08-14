@@ -1,20 +1,17 @@
-<div style="float:right">
-  <%=image_tag("article/2.png")%>
-</div>
 <h3>
   <%= @article.title %>
 </h3>
 <br />
 <p>
-<%= @article.created_at.strftime("%F")%>
+<%=  @article.created_at.strftime("%F")%>
 </p>
 <br />
 <p>
-  <b><%= @article.ingress_en %></b>
+  <b><%=raw format( @article.ingress) %></b>
 </p>
 <br />
 <p>
-  <%=raw (@article.body_en).gsub("\n", "<br />") %>
-</p>
+  <%=raw format((@article.body).gsub("\n", "<br />")) %>
+ </p>
 <%= link_to 'Edit', edit_article_path(@article, :tab=>params[:tab]) %> |
 <%= link_to 'Back', articles_path %>
