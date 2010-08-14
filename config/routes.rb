@@ -27,6 +27,7 @@ WwwIsfitOrg::Application.routes.draw do
     resources :positions do
       collection do
        get :apply
+       post :validate
       end
     end
   end

@@ -21,12 +21,20 @@ class PositionsController < ApplicationController
         @positions = Position.find_all_active_positions
         format.html { render :action => :index }
       else
-        flash[:notice] = "Noe gikk galt. Din søknad ble ikke lagret."
+        flash[:warnings] = @applicant.errors
         @positions = Position.find_all_active_positions_alfa
         @positions << Position.new
         @positions.reverse    
         format.html { render :action => :apply }
       end
     end
+ end
+ def validate
+   if params[:field].blank? || params[:value].blank?
+     render :nothing => true
+   else
+     @valid = Applicant.validate_field(params[:field], params[:value])
+     render :json => @valid
+   end
  end
 end

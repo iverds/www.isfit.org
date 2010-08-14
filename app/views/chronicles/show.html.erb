@@ -1,12 +1,13 @@
-<%@chronicle = Chronicle.find(1)%>
-<h1>  <%= @chronicle.title_en %></h1>
+<!-- Localize this! -->
+<%@chronicle = Chronicle.find_highest_weight%>
+<div class="boks">
+<h1>  <%= @chronicle.title %></h1>
 <h4>  <%= @chronicle.author %></h4>
-
-  <%#= @chronicle.ingress_no %>
-
-<p style="color:white; margin:10px;">
-  <%= @chronicle.body_en %>
+<p class="ingress">
+  <%= @chronicle.ingress %>
 </p>
-
-<%#= link_to 'Edit', edit_chronicle_path(@chronicle) %> 
-<%#= link_to 'Back', chronicles_path %>
+<p class="body">
+  <%= @chronicle.body %>
+</p>
+</div>
+<!-- Tip of the hat til deg som oppdaget denne! -Dag -->

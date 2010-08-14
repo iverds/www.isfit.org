@@ -6,9 +6,9 @@
     <%#= stylesheet_link_tag "default" %>
     <%#= stylesheet_link_tag "reset" %>
     <%#= stylesheet_link_tag "text" %>
-
-    <%= javascript_include_tag :defaults %>
+    <%= javascript_tag "var AUTH_TOKEN = #{form_authenticity_token.inspect};" if protect_against_forgery? %>
     <%= javascript_include_tag 'jquery', 'jquery.simplemodal-1.3.5.min', 'imgareaselect'%>
+    <%= javascript_include_tag :defaults %>
     <%= csrf_meta_tag %>
   </head>
   <body>
@@ -78,11 +78,41 @@
     <div id="venstreramme" class="grid_5"><!--- Start venstreramme --->
       <div id="boksturkis_bg" class="grid_5 alpha omega"><!--- Start turkis --->
         <div id="boksturkis" class="grid_5 alpha omega">
-          <%#= render :template =>'chronicles/show'%>
+          <%= render :template =>'chronicles/show'%>
         </div>
       </div><!--- Slutt turkis --->
     </div><!--- Slutt venstreramme --->
     <div id="midtramme" class="grid_14"><!--- Start midtramme --->
+      <% if flash[:notice] %>
+        <div id="notice">
+          <%= flash[:notice] %>
+        </div>
+      <% end %>
+      <% if flash[:warnings] %>
+        <div id="warning">
+          Your application could not be sent because of the following conditions:
+          <ul>
+            <% flash[:warnings].each { |attr,msg|  %>
+              <li><%= msg %></li>
+              <% } %>
+          </ul>
+        </div>
+      <% end %>
+      <% if flash[:warning] %>
+        <div id="warning">
+          <%= flash[:warning] %>
+        </div>
+      <%end%>
+      <% if flash[:warnings2] %>
+        <div id="warning">
+          Your application could not be sent because of the following conditions:
+          <ul>
+            <% flash[:warnings2].each { |attr,msg|  %>
+              <li><%= attr + " " + msg %></li>
+              <% } %>
+          </ul>
+        </div>
+      <% end %>
       <%= yield %>
     </div><!--- Slutt midtramme --->
     <div id="hoyreramme" class="grid_5"><!--- Start hoyreramme --->
@@ -93,13 +123,16 @@
       </div><!--- Slutt blå --->
       <div id="boksrod_bg" class="grid_5 alpha omega"><!--- Start rød --->
         <div id="boksrod" class="grid_5 alpha omega">
-          <h3 style="color:white">Siste fra spp</h3>
-          <ul style="list-style-type:none">
+          <div class="boks">
+          <h1 style="color:white">Siste fra spp</h1>
+          <ul style="list-style-type:none; margin: 0 0 0 -20px;">
             <%SppArticle.find(:all).each do |article|%>
               <li><%=link_to( article.title_en, "http://www.studentpeaceprize.org/articles/#{article.id}?tab=home", :target=>"_blank" )%></li>
               <%end%>
-            </ul>
-          </div>
+          </ul>
+          <p><a style="font-style: italic" href="http://www.studentpeaceprize.org">studentpeaceprize.org</a></p>
+        </div>
+        </div>
         </div><!--- Slutt rød --->
         <div id="boksoransje_bg" class="grid_5 alpha omega"><!--- Start oransje --->
           <div id="boksoransje" class="grid_5 alpha omega">
