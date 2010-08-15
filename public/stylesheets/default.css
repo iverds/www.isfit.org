@@ -140,7 +140,7 @@ a:hover {
 }
 
 #ramme {
-	background: #eeeeee;
+	background: #eee;
 	padding-bottom: 20px;
 }
 
@@ -162,6 +162,9 @@ a:hover {
 	padding-top: 15px;
 }
 
+#midtramme a {
+  color: black;
+}
 #overskrift {
 	background: #fff;
 	height: 33px;
@@ -172,6 +175,10 @@ a:hover {
 	margin-bottom: 10px;
 }
 
+#hoved_artikkel h3.overskrift {
+  padding: 0 10px 10px 10px;
+  color: black;
+}
 #hoved_artikkel {
 	background: #fff;
 	padding: 10px 0 10px 0;
