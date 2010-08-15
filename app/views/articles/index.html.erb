@@ -1,11 +1,10 @@
-<div id="overskrift" class="grid_14 alpha omega"><!--- Start overskrift --->
-  <center><%=t('article.header')%></center>
-</div><!--- Slutt overskrift --->
 <%counter = 0
-Article.find(:all).each do |article| %>
-  <%if article.main_article %>
-    <div id="hoved_artikkel" class="grid_14 alpha omega">
-    <%else%>
+  first = true
+  @articles.each do |article| %>
+  <%if first %>
+      <div id="hoved_artikkel" class="grid_14 alpha omega">
+      <%
+    else%>
       <%classtext = "grid_7 "+  (counter%2 == 0 ? "alpha" : "omega")
       counter +=1
     %>
@@ -13,10 +12,11 @@ Article.find(:all).each do |article| %>
     <%end%>
     <a href="<%=article_path(article, :tab=>params[:tab])%>">
       <h1><%=article.title%></h1>
-      <%=image_tag("article/"+article.id.to_s+".png") %>
-      <p><%=article.ingress%></p>
+      <%=image_tag("article_images/"+article.id.to_s+"_"+ (first ? "1" : "2")+".jpg") %>
+      <p><%=article.sub_title%></p>
     </a>
   </div>
+  <% first = false if first %>
 <%end%>
 
-<%= link_to 'New Article', new_article_path %>
+

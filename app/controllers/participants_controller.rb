@@ -32,7 +32,7 @@ class ParticipantsController < ApplicationController
     end
 
 
-    if @participant.valid? && verify_repactcha(:model=>@participant, :message=>"Recaptcha verification failed") &&  @participant.save
+    if @participant.valid? &&   @participant.save
       Postoffice.deliver_registered(@participant.first_name + " " + @participant.last_name, @participant.email)
       redirect_to :action => "registered"
     else
