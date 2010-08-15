@@ -7,7 +7,7 @@
   <%= @chronicle.ingress %>
 </p>
 <p class="body">
-  <%= @chronicle.body %>
+  <%=raw @chronicle.body.gsub("\n","<br>") %>
 </p>
 </div>
 <!-- Tip of the hat til deg som oppdaget denne! -Dag -->

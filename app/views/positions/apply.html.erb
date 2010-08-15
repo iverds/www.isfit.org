@@ -1,4 +1,7 @@
-  <h1>Søknadsskjema</h1>
+<% content_for :script do %>
+  <%= javascript_include_tag 'new_applicant' %>
+<%end%>
+<h1>Søknadsskjema</h1>
   <p>Fyll ut samtlige felter under og klikk på "Søk nå!" for å levere søknaden.</p>
 <% form_for(@applicant, :url => {:controller => "positions", :action => "save"}) do |f| %>
   <p>  

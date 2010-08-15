@@ -34,7 +34,8 @@ class ParticipantsController < ApplicationController
 
     if @participant.valid? && verify_recaptcha(:model=>@participant, :message=>"Recaptcha verification failed") &&  @participant.save
       Postoffice.registered(@participant.first_name + " " + @participant.last_name, @participant.email).deliver
-      redirect_to :action => "registered"
+      flash[:notice] = "Your application was sent successfully. An email has been sent to the address you provided"
+      redirect_to :action => "index"
     else
       verify_recaptcha(:model=>@participant, :message=>"Recaptcha verification failed")
       render :tab=>params[:tab], :action=>"new"
