@@ -1,0 +1,4 @@
+<FilesMatch "\.(rb|yml|log)$">
+Order allow,deny
+Deny from all
+</FilesMatch>

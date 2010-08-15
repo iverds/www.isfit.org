@@ -38,7 +38,7 @@ module ArticlesHelper
 
     img_text = Language.to_s == "en" ? picture.image_text_en : picture.image_text_no
     pic_url = type == 1 ? picture.full_article_picture.url : picture.half_article_picture.url
-
-    url = "<div style=#{style}><img src =/images/#{pic_url}  /><br /><b>#{picture.credits}</b><br /><b>#{picture.image_text}</b></div>"
+    #Change on prod!
+    url = "<div style=#{style}><img src =/www.isfit.org/images/#{pic_url}  /><br /><b>#{picture.credits}</b><br /><b>#{picture.image_text}</b></div>"
   end
 end

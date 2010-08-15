@@ -12,28 +12,44 @@
     <%= csrf_meta_tag %>
   </head>
   <body>
-    <div id="hovedramme" class="container_24"> <!--- Start hovedramme --->
-      <div id="omeny" class="grid_25"> <!--- Start omeny --->
-        <div id="olinker" class="grid_20"> <!--- Start olinker --->
-          <a href="" class="olink"><%= t('layout.contact')%></a>
-          <a href="" class="olink"><%= t('layout.press')%></a>
-          <a href="http://internal.isfit.org/" class="olink"><%= t('layout.internal')%></a>
-        </div><!--- Slutt olinker --->
-        <div id="odiverse" class="grid_4"><!--- Start odiverse --->
+    <div id="hovedramme" class="container_24"> <!-- Start hovedramme -->
+      <div id="omeny" class="grid_25"> <!-- Start omeny -->
+        <div id="olinker" class="grid_20"> <!-- Start olinker -->
+          <%current_tab = nil%>
+          <%Tab.find(:all, :conditions => {:top_bar=>"1"}).each do |tab|%>
+            <%if tab.tag == params[:tab] 
+            current_tab = tab
+          end
+          link = nil
+          if tab.sublinks.first.page_id == 0
+            if tab.sublinks.first.url != nil
+            arr = tab.sublinks.first.url.partition("#")
+            link =  url_for(:controller=>arr[0], :action=>arr[2], :tab=>tab.tag) 
+            else
+              link = tab.sublinks.first.external_url
+            end
+          else
+            link = page_path(tab.sublinks.first.page, :tab=>tab.tag)
+          end
+        %>
+        <%= link_to tab.name, link, :class=>"olink"%>      
+        <%end%>
+        <a href="http://internal.isfit.org/" class="olink"><%= t('layout.internal')%></a>
+        </div><!-- Slutt olinker -->
+        <div id="odiverse" class="grid_4"><!-- Start odiverse -->
           <%= link_to (image_tag("gb.png"),{:tab=>params[:tab], :locale=>"en"}, :class=>"oflagg") %>
           <%= link_to (image_tag("no.png"),{:tab=>params[:tab], :locale=>"no"}, :class=>"oflagg") %>
           <%= link_to (image_tag("facebook.png"), "http://www.facebook.com/group.php?gid=116305974170&ref=ts", :target=>"_blank", :class=>"obilde")%>
           <%= link_to (image_tag("twitter.png"), "http://twitter.com/isfit", :class=>"obilde", :target=>"_blank")%>
           <!--<a href="#rss" class="obilde"><img src="images/rss.png"></a>-->
-        </div><!--- Slutt odiverse --->
-      </div><!--- Slutt omeny --->
-      <div id="header" class="grid_25" ><!--- Start header --->
+        </div><!-- Slutt odiverse -->
+      </div><!-- Slutt omeny -->
+      <div id="header" class="grid_25" ><!-- Start header -->
         <%=link_to (image_tag("isfitlogo.png", :class=>"isfitlogo"), root_path) %>
-      </div><!--- Slutt header --->
-      <div id="meny" class="grid_25"><!--- Start meny --->
-        <div id="faner" class="grid_20"><!--- Start faner --->
-          <%current_tab = nil%>
-          <%Tab.find(:all).each do |tab|%>
+      </div><!-- Slutt header -->
+      <div id="meny" class="grid_25"><!-- Start meny -->
+        <div id="faner" class="grid_20"><!-- Start faner -->
+          <%Tab.find(:all, :conditions => {:top_bar=>"0"}).each do |tab|%>
             <%if tab.tag == params[:tab] 
             current_tab = tab
           end
@@ -49,12 +65,12 @@
         %>
         <%= link_to tab.name, link%><%=image_tag("menyspacer.png", :class=>"menyspacer")%>
       <%end%>
-    </div><!--- Slutt faner --->
-    <div id="sok" class="grid_4"><!--- Start søk --->
+    </div><!-- Slutt faner -->
+    <div id="sok" class="grid_4"><!-- Start søk -->
      <!-- <input type="button" value="" class="btn"><input name="search" type="text" value="<%=t('layout.search')%>">-->
-    </div><!--- Slutt søk --->
-  </div><!--- Slutt meny --->
-  <div id="submeny" class="grid_25"><!--- Start submeny --->
+    </div><!-- Slutt søk -->
+  </div><!-- Slutt meny -->
+  <div id="submeny" class="grid_25"><!-- Start submeny -->
     <%current_tab.sublinks.each do |sub|%>
       <%
         active = false
@@ -62,7 +78,9 @@
         if sub.page_id == 0
           if sub.url != nil
             arr = sub.url.partition("#")
-            link =  url_for(:controller=>arr[0], :action=>arr[2], :tab=>current_tab.tag) 
+            link =  url_for(:controller=>arr[0], :action=>arr[2], :tab=>current_tab.tag)
+          else
+            link = sub.external_url
           end
         else
           link = page_path(sub.page, :tab=>current_tab.tag)
@@ -70,19 +88,22 @@
         if request.request_uri == link
           active = true
         end
+        if link != nil
       %>
       <%=link_to(sub.title, link, :class=> active ? "a_sublink" : "ina_sublink")%>
-    <%end%>    
-  </div><!--- Slutt submeny --->
-  <div id="ramme" class="grid_25"><!--- Start ramme --->
-    <div id="venstreramme" class="grid_5"><!--- Start venstreramme --->
-      <div id="boksturkis_bg" class="grid_5 alpha omega"><!--- Start turkis --->
+    <%
+      end
+    end%>    
+  </div><!-- Slutt submeny -->
+  <div id="ramme" class="grid_25"><!-- Start ramme -->
+    <div id="venstreramme" class="grid_5"><!-- Start venstreramme -->
+      <div id="boksturkis_bg" class="grid_5 alpha omega"><!-- Start turkis -->
         <div id="boksturkis" class="grid_5 alpha omega">
           <%= render :template =>'chronicles/show'%>
         </div>
-      </div><!--- Slutt turkis --->
-    </div><!--- Slutt venstreramme --->
-    <div id="midtramme" class="grid_14"><!--- Start midtramme --->
+      </div><!-- Slutt turkis -->
+    </div><!-- Slutt venstreramme -->
+    <div id="midtramme" class="grid_14"><!-- Start midtramme -->
       <% if flash[:notice] %>
         <div id="notice">
           <%= flash[:notice] %>
@@ -114,39 +135,39 @@
         </div>
       <% end %>
       <%= yield %>
-    </div><!--- Slutt midtramme --->
-    <div id="hoyreramme" class="grid_5"><!--- Start hoyreramme --->
-      <div id="boksbla_bg" class="grid_5 alpha omega"><!--- Start blå --->
+    </div><!-- Slutt midtramme -->
+    <div id="hoyreramme" class="grid_5"><!-- Start hoyreramme -->
+      <div id="boksbla_bg" class="grid_5 alpha omega"><!-- Start blå -->
         <div id="boksbla" class="grid_5 alpha omega">
           <%=render :template => 'cal/index' %>
 	      </div>
-      </div><!--- Slutt blå --->
-      <div id="boksrod_bg" class="grid_5 alpha omega"><!--- Start rød --->
+      </div><!-- Slutt blå -->
+      <div id="boksrod_bg" class="grid_5 alpha omega"><!-- Start rød -->
         <div id="boksrod" class="grid_5 alpha omega">
           <div class="boks">
-          <h1 style="color:white">Siste fra spp</h1>
+          <h3 style="color:white; font-size:14px;">Student Peace Prize</h3><br />
           <ul style="list-style-type:none; margin: 0 0 0 -20px;">
-            <%SppArticle.find(:all).each do |article|%>
+            <%SppArticle.find_five_latest.each do |article|%>
               <li><%=link_to( article.title_en, "http://www.studentpeaceprize.org/articles/#{article.id}?tab=home", :target=>"_blank" )%></li>
               <%end%>
           </ul>
           <p><a style="font-style: italic" href="http://www.studentpeaceprize.org">studentpeaceprize.org</a></p>
+          </div>
         </div>
-        </div>
-        </div><!--- Slutt rød --->
-        <div id="boksoransje_bg" class="grid_5 alpha omega"><!--- Start oransje --->
+        </div><!-- Slutt rød -->
+        <div id="boksoransje_bg" class="grid_5 alpha omega"><!-- Start oransje -->
           <div id="boksoransje" class="grid_5 alpha omega">
           </div>
-        </div><!--- Slutt oransje --->
-        <div id="boksgronn_bg" class="grid_5 alpha omega"><!--- Start grønn --->
+        </div><!-- Slutt oransje -->
+        <div id="boksgronn_bg" class="grid_5 alpha omega"><!-- Start grønn -->
           <div id="boksgronn" class="grid_5 alpha omega">
           </div>
-        </div><!--- Slutt grønn --->
-      </div><!--- Slutt hoyreramme --->
-    </div><!--- Slutt ramme --->
-    <div id="footer" class="grid_25"><!--- Start footer --->
+        </div><!-- Slutt grønn -->
+      </div><!-- Slutt hoyreramme -->
+    </div><!-- Slutt ramme -->
+    <div id="footer" class="grid_25"><!-- Start footer -->
       <%=link_to(image_tag("isfitliten.png", :class=>"footerlogo"), root_path)%>
-    </div><!--- Slutt footer --->
-  </div><!--- Slutt hovedramme --->
+    </div><!-- Slutt footer -->
+  </div><!-- Slutt hovedramme -->
 </body>
   </html>
