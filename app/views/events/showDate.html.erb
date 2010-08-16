@@ -1,0 +1,11 @@
+<% for e in @events %> 
+  <h3>
+    <%= e.title %>
+  </h3>
+  <br />
+  <p>
+  <%= e.date.strftime("%F")%>
+  </p>
+  <br />
+  <hr />
+<% end %>

@@ -1,4 +1,6 @@
 <h1><%= @position.title_no %></h1>
-<p><%= @position.description_no.gsub("\n","<br />") %></p>
-<h3><%= link_to "Søk nå", apply_position_path(params[:tab]) %></h3>
-<%= link_to :Back, position_index_path %>
+<p><%= raw @position.description_no.gsub("\n","<br />") %></p>
+<p>
+<h3><%= link_to "Søk nå", apply_positions_path(params[:tab]) %></h3>
+<%= link_to :Back, positions_path(params[:tab]) %>
+</p>

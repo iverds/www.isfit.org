@@ -1,0 +1,13 @@
+<% for e in @events %> 
+  <h3>
+    <%= e.title %>
+  </h3>
+  <br />
+  <p>
+  <%= e.date.strftime("%F")%>
+  </p>
+  <br />
+  <%= link_to "Delete Event", { :action=>"destroy", :tab=>params[:tab], :id=>e}, :confirm=>"Are you sure you want to delete "+e.title+"?", :method=>:delete  %>
+  <%= link_to "Edit Event", { :action=>"edit", :tab=>params[:tab], :id=>e}  %> 
+  <hr />
+<% end %>

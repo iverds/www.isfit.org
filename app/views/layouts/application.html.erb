@@ -7,8 +7,8 @@
     <%#= stylesheet_link_tag "reset" %>
     <%#= stylesheet_link_tag "text" %>
     <%= javascript_tag "var AUTH_TOKEN = #{form_authenticity_token.inspect};" if protect_against_forgery? %>
-    <%= javascript_include_tag 'jquery', 'jquery.simplemodal-1.3.5.min', 'imgareaselect'%>
-    <%= javascript_include_tag :defaults %>
+    <%= javascript_include_tag 'jquery','application', 'jquery.simplemodal-1.3.5.min', 'imgareaselect'%>
+    <%= yield :script %>
     <%= csrf_meta_tag %>
   </head>
   <body>
@@ -50,8 +50,12 @@
       <div id="meny" class="grid_25"><!-- Start meny -->
         <div id="faner" class="grid_20"><!-- Start faner -->
           <%Tab.find(:all, :conditions => {:top_bar=>"0"}).each do |tab|%>
+            <% style = "" %>
             <%if tab.tag == params[:tab] 
             current_tab = tab
+            style="selected"
+          else
+            style = ""
           end
           link = nil
           if tab.sublinks.first.page_id == 0
@@ -63,7 +67,7 @@
             link = page_path(tab.sublinks.first.page, :tab=>tab.tag)
           end
         %>
-        <%= link_to tab.name, link%><%=image_tag("menyspacer.png", :class=>"menyspacer")%>
+        <%= link_to tab.name, link, :class => style%><%=image_tag("menyspacer.png", :class=>"menyspacer")%>
       <%end%>
     </div><!-- Slutt faner -->
     <div id="sok" class="grid_4"><!-- Start søk -->

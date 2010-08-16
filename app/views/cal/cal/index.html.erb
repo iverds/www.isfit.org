@@ -58,10 +58,10 @@
 				<td class="calendar-day">
 					<%if dates[list_day] == 1%>
 						<u>
-						<%= link_to list_day.to_s, url_for(:controller=>"events", :action=>"showDate", :tab=>params[:tab], :year=>year.to_s, :month=>month.to_s, :day=>list_day.to_s) %></td>
+						<%= link_to list_day.to_s, url_for(:controller=>"events", :action=>"show", :tab=>params[:tab], :year=>year.to_s, :month=>month.to_s, :day=>list_day.to_s) %></td>
 						</u>
 					<%elsif%>
-						 <%= link_to list_day.to_s, url_for(:controller=>"events", :action=>"showDate", :tab=>params[:tab], :year=>year.to_s, :month=>month.to_s, :day=>list_day.to_s) %></td>
+						 <%= link_to list_day.to_s, url_for(:controller=>"events", :action=>"show", :tab=>params[:tab], :year=>year.to_s, :month=>month.to_s, :day=>list_day.to_s) %></td>
 					<%end%>
 				<% if running_day == 6 %>
 					</tr>
@@ -97,5 +97,5 @@
 		<!--end the table-->
 		<tr><td><%=@bajs%></td></tr>
 		</table>
-		<%= link_to 'New Event', :tab=>params[:tab], :controller=>"events", :action=>"new" %>
+		<%= link_to 'New Event', :controller=>"events", :action=>"new", :tab=>params[:tab] %>
 

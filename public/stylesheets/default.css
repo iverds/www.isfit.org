@@ -73,10 +73,14 @@ a:hover {
 #faner {
 	height: 34px;
 }
+#faner a.selected {
+        text-decoration: underline;
+}
+
 
 #faner a{
 	float: left;
-	font-size: 12px;
+	font-size: 13px;
 	font-weight: bold;
 	margin: 9px 0 0 0;
 }
@@ -125,7 +129,7 @@ a:hover {
 
 .a_sublink {
 	color: #000;
-	font-size: 11px;
+	font-size: 12px;
 	font-weight:bold;
 	float: left;
 	margin: 10px 10px 0 10px;
@@ -133,7 +137,7 @@ a:hover {
 
 .ina_sublink {
 	color: #ffac0c;
-	font-size: 11px;
+	font-size: 12px;
 	font-weight: bold;
 	float: left;
 	margin: 10px 10px 0 10px;
@@ -163,7 +167,7 @@ a:hover {
 }
 
 #midtramme a {
-  color: black;
+  color: #028390;
 }
 #overskrift {
 	background: #fff;
@@ -175,6 +179,41 @@ a:hover {
 	margin-bottom: 10px;
 }
 
+
+#warning {
+  margin-bottom: 5%;
+  border: 2px solid #028390;
+  padding: 10px;
+}
+#notice {
+  margin-bottom: 5%;
+  border: 2px solid #028390;
+  padding: 10px;
+}
+div.field_without_errors input {
+  border: 1px solid green;
+}
+
+div.field_without_errors select {
+  border: 1px solid green;
+}
+
+div.field_without_errors textarea {
+  border: 1px solid green;
+}
+
+
+div.field_with_errors input {
+  border: 1px solid red;
+}
+
+div.field_with_errors select {
+  border: 1px solid red;
+}
+
+div.field_with_errors textarea {
+  border: 1px solid red;
+}
 #hoved_artikkel h3.overskrift {
   padding: 0 10px 10px 10px;
   color: black;
@@ -201,7 +240,7 @@ a:hover {
 #hoved_artikkel p {
 	margin: 0px 10px 0 10px;
 	color: #000;
-	font-size: 12px;
+	font-size: 15px;
 }
 
 #artikkel {
@@ -226,7 +265,7 @@ a:hover {
 #artikkel p {
 	margin: 0px 10px 0 10px;
 	color: #000;
-	font-size: 10px;
+	font-size: 12px;
 }
 
 #hoyreramme {

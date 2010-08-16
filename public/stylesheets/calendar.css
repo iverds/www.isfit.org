@@ -7,6 +7,4 @@ td.calendar-day-headw { color: #EAAE0D; }
 /* shared */
 td.calendar-day-headw, td.calendar-day-head { font-weight:bold; text-align:center; width:15px; padding:5px; font-size: 11px; }
 td.calendar-day, td.calendar-day-np { width:10px; padding:5px; }
-body {
-	font: 12px Verdana, Geneva, sans-serif;
-}
+

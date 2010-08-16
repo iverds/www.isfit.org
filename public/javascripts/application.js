@@ -6,13 +6,13 @@ function validate_field(name, value, field) {
   postData['field'] = name;
   postData['value'] = value;
   // Denne må endres på dev for at den skal fungere!
-  $.post('/admission/position/validate', postData, function(data) {
+  $.post('/dagingaa/www.isfit.org/admission/positions/validate', postData, function(data) {
       if(data.valid==false) {
-      $(field).parent('div').removeClass('fieldWithoutErrors');
-      $(field).parent('div').addClass('fieldWithErrors');
+      $(field).parent('div').removeClass('field_without_errors');
+      $(field).parent('div').addClass('field_with_errors');
       }else{
-      $(field).parent('div').removeClass('fieldWithErrors');
-      $(field).parent('div').addClass('fieldWithoutErrors');
+      $(field).parent('div').removeClass('field_with_errors');
+      $(field).parent('div').addClass('field_without_errors');
       }                                                        
       }, 'json');        
 }
@@ -41,22 +41,4 @@ $(document).ajaxSend(function(event, request, settings) {
     settings.data += (settings.data ? "&" : "") + "authenticity_token=" + encodeURIComponent(AUTH_TOKEN);
     });
 
-
-$(document).ready(function() {
-
-    $("#contact_name").keyup(function() {
-      delay(function() {
-        var name = $("#contact_name").val();
-        validate_field('name', name, $("#contact_name") );
-        }, 600);
-      });
-
-    $("#contact_email").keyup(function() {
-      delay(function() {
-        var email = $("#contact_email").val();
-        validate_field('email', email, $("#contact_email") );
-        }, 600);
-      });
-
-    });
 

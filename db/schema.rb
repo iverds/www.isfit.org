@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100814115842) do
+ActiveRecord::Schema.define(:version => 20100814195017) do
 
   create_table "applicants", :force => true do |t|
     t.string   "firstname"
@@ -63,6 +63,7 @@ ActiveRecord::Schema.define(:version => 20100814115842) do
     t.datetime "updated_at"
     t.boolean  "main_article"
     t.boolean  "published"
+    t.string   "byline"
   end
 
   create_table "chronicles", :force => true do |t|

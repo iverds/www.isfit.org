@@ -1,6 +1,4 @@
-WwwIsfitOrg::Application.routes.draw do
-
-  
+WwwIsfitOrg::Application.routes.draw do  
 
   scope "(/:tab)" do
     resources :sublinks
@@ -29,8 +27,14 @@ WwwIsfitOrg::Application.routes.draw do
        get :apply
        post :validate
       end
-    end
+    end 
+    resources :events       
   end
+  
+  resources :events
+
+  match ':tab/events/:year/:month/:day' => 'events#showDate', :as => :events
+
   root :to => "articles#index" , :tab=>"news"
 
   # The priority is based upon order of creation:
