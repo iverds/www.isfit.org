@@ -22,8 +22,12 @@ module ArticlesHelper
     while text.index('##pic') != nil
       t_start = text.index('##pic')
       t_end = text.index('pic##')
-      img_id = text[t_start+6].chr
-      img_type = text[t_start+8].chr
+      reg = Regexp.new(/##pic (\d+) (\d+) pic##/)
+      match = reg.match(text[t_start..t_end+4])
+      #img_id = text[t_start+6].chr
+      #img_type = text[t_start+8].chr
+      img_id = match[1]
+      img_type = match[2]
       url = article_image(img_id.to_i, img_type.to_i)
       text[t_start..t_end+4] = url
     end
