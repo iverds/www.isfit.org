@@ -326,5 +326,21 @@ div.field_with_errors textarea {
 .footerlogo {
 	margin: 31px 20px 20px 5px;
 }
-	
-	
+
+.articleheight {
+  height: 250px;
+}
+
+.photo_full {
+  width: 540px;
+}
+
+.photo_left {
+  float:left;
+  width:258px;
+}
+
+.photo_right {
+  float:right;
+  width:258px;
+}

@@ -31,16 +31,15 @@ module ArticlesHelper
 
   def article_image(picture_id, type)
     picture = Photo.find_by_id(picture_id)
-    style = "float:"
-    style << case type.to_s
-      when "1" then "none"
-      when "2" then "right"
-      when "3" then "left"
+    style = case type.to_s
+      when "1" then "photo_full"
+      when "2" then "photo_right"
+      when "3" then "photo_left"
     end
 
     img_text = Language.to_s == "en" ? picture.image_text_en : picture.image_text_no
     pic_url = type == 1 ? picture.full_article_picture.url : picture.half_article_picture.url
     #Change on prod!
-    url = "<div style=#{style}><img src =/www.isfit.org/images/#{pic_url}  /><br /><b>#{picture.credits}</b><br /><b>#{picture.image_text}</b></div>"
+    url = "<div class=#{style}><img src =/www.isfit.org/images/#{pic_url}  /><br /><i>#{picture.credits}</i><br /><i>#{picture.image_text}</i></div>"
   end
 end

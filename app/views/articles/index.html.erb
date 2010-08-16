@@ -5,8 +5,10 @@
       <%if first %>
         <div id="hoved_artikkel" class="grid_14 alpha omega">
 
-        <%else%>
-          <%classtext = "grid_7 "+  (counter%2 == 0 ? "alpha" : "omega")
+        <%else
+          %>
+          <%#=raw counter%2 == 0 ? "<div>" : ""%>
+          <%classtext = "grid_7 articleheight "+  (counter%2 == 0 ? "alpha" : "omega")
           counter +=1
         %>
 
@@ -18,6 +20,7 @@
         <p><%=article.sub_title%></p>
       </a>
     </div>
+    <%#= raw counter%2 == 0 ? "</div>" : ""%>
     <% first = false if first %>
   <% end %>
 <%end%>
