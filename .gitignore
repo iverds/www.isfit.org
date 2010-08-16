@@ -6,3 +6,4 @@ log/*.log
 tmp/**/*
 public/.htaccess
 public/images/*
+*.swp
