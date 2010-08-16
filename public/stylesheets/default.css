@@ -344,9 +344,11 @@ div.field_with_errors textarea {
 .photo_left {
   float:left;
   width:258px;
+  padding-right: 10px;
 }
 
 .photo_right {
   float:right;
   width:258px;
+  padding-left: 10px;
 }
