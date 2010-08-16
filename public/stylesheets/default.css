@@ -185,6 +185,13 @@ a:hover {
   border: 2px solid #028390;
   padding: 10px;
 }
+
+#error_explanation {
+  margin-bottom: 5%;
+  border: 2px solid #028390;
+  padding: 10px;
+}
+
 #notice {
   margin-bottom: 5%;
   border: 2px solid #028390;
@@ -227,7 +234,7 @@ div.field_with_errors textarea {
 #hoved_artikkel h1 {
 	margin: 0px 10px 0 10px;
 	color: #000;
-	font-size: 14px;
+	font-size: 25px;
 	font-weight: bold;
 }
 

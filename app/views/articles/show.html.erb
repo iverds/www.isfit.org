@@ -1,9 +1,11 @@
 <h3>
   <%= @article.title %>
 </h3>
-<%=image_tag "article_images/"+@article.id.to_s+"_3.jpg"%>
+<p>
+<%=image_tag "article_images/"+@article.id.to_s + "_3.jpg"%>
 <br />
 <%= @article.byline%>
+</p>
 <p>
 <%=  @article.created_at.strftime("%F")%>
 </p>
@@ -13,5 +15,5 @@
 </p>
 <br />
 <p>
-  <%=raw format((@article.body).gsub("\n", "<br />")) %>
- </p>
+  <%= raw format(@article.body) %>
+</p>
