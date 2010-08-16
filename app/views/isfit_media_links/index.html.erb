@@ -1,0 +1,31 @@
+<h1>Listing isfit_media_links</h1>
+
+<table>
+  <tr>
+    <th>Link</th>
+    <th>Short desc no</th>
+    <th>Long desc no</th>
+    <th>Short desc en</th>
+    <th>Long desc en</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @isfit_media_links.each do |isfit_media_link| %>
+  <tr>
+    <td><%= isfit_media_link.link %></td>
+    <td><%= isfit_media_link.short_desc_no %></td>
+    <td><%= isfit_media_link.long_desc_no %></td>
+    <td><%= isfit_media_link.short_desc_en %></td>
+    <td><%= isfit_media_link.long_desc_en %></td>
+    <td><%= link_to 'Show', isfit_media_link %></td>
+    <td><%= link_to 'Edit', edit_isfit_media_link_path(isfit_media_link) %></td>
+    <td><%= link_to 'Destroy', isfit_media_link, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Isfit media link', new_isfit_media_link_path %>

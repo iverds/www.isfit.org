@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  link: MyString
+  short_desc_no: MyString
+  long_desc_no: MyString
+  short_desc_en: MyString
+  long_desc_en: MyString
+
+two:
+  link: MyString
+  short_desc_no: MyString
+  long_desc_no: MyString
+  short_desc_en: MyString
+  long_desc_en: MyString
