@@ -1,5 +1,5 @@
 <% if @positions.length < 1 %>
-  <p>Vi har dessverre ingen opptak for tiden, men følg med på nettsiden for nye oppdateringer.</p>
+  <p><%= t(position.no_new_positions) %></p>
 <% else %>
   <h1>ISFiT har for øyeblikket opptak på følgende stillinger</h1>
   <% active_group = nil %>

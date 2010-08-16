@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Link:</b>
+  <%= @isfit_media_link.link %>
+</p>
+
+<p>
+  <b>Short desc no:</b>
+  <%= @isfit_media_link.short_desc_no %>
+</p>
+
+<p>
+  <b>Long desc no:</b>
+  <%= @isfit_media_link.long_desc_no %>
+</p>
+
+<p>
+  <b>Short desc en:</b>
+  <%= @isfit_media_link.short_desc_en %>
+</p>
+
+<p>
+  <b>Long desc en:</b>
+  <%= @isfit_media_link.long_desc_en %>
+</p>
+
+
+<%= link_to 'Edit', edit_isfit_media_link_path(@isfit_media_link) %> |
+<%= link_to 'Back', isfit_media_links_path %>
