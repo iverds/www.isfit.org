@@ -1,0 +1,13 @@
+<h2>Dialogue participant login</h2>
+<p>Please log in using your e-mail address and belonging password to access your ISFiT profile.</p>
+<% form_tag do %>
+<p>
+<b>E-mail address:</b><br />
+<%= text_field_tag("userid", @userid) %>
+</p>
+<p>
+<b>Password:</b><br />
+<%= password_field_tag("password") %>
+</p>
+<%= submit_tag("Log in") %>
+<% end %>

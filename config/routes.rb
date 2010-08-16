@@ -15,6 +15,8 @@ WwwIsfitOrg::Application.routes.draw do
     end
 
     resources :participants
+    
+    resources :dialogue_participants
 
     resources :chronicles
 
