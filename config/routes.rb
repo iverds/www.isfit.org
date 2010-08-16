@@ -1,5 +1,7 @@
 WwwIsfitOrg::Application.routes.draw do  
 
+  resources :isfit_media_links
+
   scope "(/:tab)" do
     resources :sublinks
 

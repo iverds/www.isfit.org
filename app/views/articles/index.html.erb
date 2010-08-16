@@ -1,22 +1,24 @@
-<%counter = 0
+  <%counter = 0
   first = true
   @articles.each do |article| %>
-  <%if first %>
-      <div id="hoved_artikkel" class="grid_14 alpha omega">
-      <%
-    else%>
-      <%classtext = "grid_7 "+  (counter%2 == 0 ? "alpha" : "omega")
-      counter +=1
-    %>
-    <div id="artikkel" class="<%=classtext%>">
-    <%end%>
-    <a href="<%=article_path(article, :tab=>params[:tab])%>">
-      <h1><%=article.title%></h1>
-      <%=image_tag("article_images/"+article.id.to_s+"_"+ (first ? "1" : "2")+".jpg") %>
-      <p><%=article.sub_title%></p>
-    </a>
-  </div>
-  <% first = false if first %>
-<%end%>
+    <% if article.title != nil %>
+      <%if first %>
+        <div id="hoved_artikkel" class="grid_14 alpha omega">
 
+        <%else%>
+          <%classtext = "grid_7 "+  (counter%2 == 0 ? "alpha" : "omega")
+          counter +=1
+        %>
+
+            <div id="artikkel" class="<%=classtext%>">
+      <%end%>
+      <a href="<%=article_path(article, :tab=>params[:tab])%>">
+        <%=image_tag("article_images/"+article.id.to_s+"_"+ (first ? "1" : "2")+".jpg") %>
+        <h1><%=article.title%></h1>
+        <p><%=article.sub_title%></p>
+      </a>
+    </div>
+    <% first = false if first %>
+  <% end %>
+<%end%>
 
