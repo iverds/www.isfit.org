@@ -78,6 +78,11 @@ div.boks {
 div.boks h1 {
   color: white;
 }
+
+div.boks-left {
+  padding: 5px;
+}
+
 div.boks h4 {
   font-style: italic;
   font-size: 10px;

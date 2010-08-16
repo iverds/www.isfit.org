@@ -1,6 +1,6 @@
 
 body {
-	background: #1a96b8  url(../images/bg.png) repeat-x !important;
+  background: #1a96b8  url(../images/bg.png) repeat-x !important;
 	color: #333;
 	font-size: 11px;
 }
@@ -55,7 +55,7 @@ a:hover {
 }
 
 #header {
-	background: #fff url(../images/headerbg.png);
+	background: #fff url(../images/header-01.png);
 	height: 246px;
 	clear: both;
 }
@@ -156,13 +156,16 @@ a:hover {
 }
 
 #boksturkis_bg {
-	background: url(../images/boksturkisbg.png) repeat-y;
+/*	background: url(../images/chronicle-top.png) no-repeat;*/
 	margin-bottom: 10px;
+  position:relative;
 }
 
 #boksturkis {
-	background: url(../images/boksturkis.png) no-repeat;
-	height: 600px;
+/*	background: url(../images/boksturkis.png) no-repeat;*/
+/*  background: url(../images/chronicle-middle.png) repeat-y;*/
+  background-color:white;
+	height: auto;
 }
 
 #midtramme {

@@ -1,6 +1,8 @@
 <!-- Localize this! -->
 <%@chronicle = Chronicle.find_highest_weight%>
-<div class="boks">
+<%= image_tag("chronicle_comment_#{Language.to_s}", :style=>"margin:0px;")%>
+
+<div class="boks-left">
 <h1>  <%= @chronicle.title %></h1>
 <h4>  <%= @chronicle.author %></h4>
 <p class="ingress">
