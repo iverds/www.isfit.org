@@ -9,7 +9,7 @@
 ----------------------------------------------------------------------------------------------------*/
 
 body {
-	font: 12px Verdana, Geneva, sans-serif;
+	font: 13px 'Helvetica','Times New Roman',Arial, Geneva, sans-serif;
 }
 
 a:focus {
@@ -39,7 +39,11 @@ h3 {
 }
 
 h4 {
-	font-size: 19px;
+	font-size: 15px;
+}
+
+div#midtramme ul {
+  padding-left: 4%;
 }
 
 h5 {
