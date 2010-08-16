@@ -5,5 +5,8 @@ db/*.sqlite3
 log/*.log
 tmp/**/*
 public/.htaccess
-public/images/*
+public/images/article/*
+public/images/article
+public/images/article_images/*
+public/images/article_images
 *.swp
