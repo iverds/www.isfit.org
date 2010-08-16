@@ -1,0 +1,71 @@
+	
+	<h2>Questions and answers</h2>
+	<p>Questions asked will appear in the below list, and the corresponding answer will show up as soon as the question has been answered.</p>
+	<h3>Ask question</h3>
+	<p>Select recipient, enter subject and question and press Submit question to ask a question.</p>
+	<% form_for :question, @question, :url => { :action => "question" } do |f| %>
+	<b>Recipient:</b><br />
+	<%= f.radio_button :recipient, :participant %>Participant team
+	(Questions regarding Visa only)
+	<br />
+	<%= f.radio_button :recipient, :dialogue %>Dialogue team
+	(All other questions)
+	<br /><br />
+	<b>Subject:</b><br />
+	<%= f.text_field :subject, :style => 'width:595px' %><br />
+	<br><b>Question:</b><br />
+	<%= f.text_area :question, :style => "width: 595px; height: 100px;"%>
+	<br /><br />
+	<%= submit_tag 'Submit question' %>
+	<% end %>
+	
+	<h3>Questions and answers</h3>
+	<% if @previous.size > 0 %>
+	<p>The list below contains all questions you have asked and their corresponding answers.</p>	
+	<table width="100%" cellpadding="12" cellspacing="0" style="border: 1px solid #8aafc2">
+	<%every_second =1 %>
+	<% @previous.each do |f| %>
+		<%every_second +=1 %>
+		<tr <% if every_second%2==0 %>bgcolor=#bfd6e2<%else%>bgcolor=#d1e3ed<%end%>>
+		
+			<td>
+			
+				<table  width=100% cellpadding="2">
+					
+					<tr>
+						<td width="20"></td>
+						<td><b><%= f.subject %></b></td>
+						<td align="right" width="120">
+							<%= f.question_datetime.strftime('%m.%d.%Y %H:%M') %>
+						</td>
+					</tr>
+					<tr>
+						<td valign=top><b>Q: </b></td>
+						<td colspan=2><%= format(f.question) %></td>
+					</tr>	
+					<tr>
+						<% if !f.answer.nil? %>
+						<td valign=top><b>A: </b></td>
+						<td colspan="2"><em><%= format(f.answer) %></em></td>
+							<% else %>
+						<td></td>
+						<td colspan="2">
+							<em>No functionary has replied to this answer yet.</em>
+						</td>
+					<%end%>
+					</tr>
+				</table>
+				
+			</td>
+		</tr>
+			
+		
+	<% end%>
+	</table>
+	
+	<%else%>
+	<p>You have not asked any questions yet.</p>
+
+	<% end %>
+
+	

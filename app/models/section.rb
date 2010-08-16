@@ -1,5 +1,6 @@
 class Section < ActiveRecord::Base
-	has_many :groups
+  lang_attr :name	
+  has_many :groups
 
 	def self.getAll(language)
 		find(:all, :order => "name_#{language} asc")

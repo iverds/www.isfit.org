@@ -4,8 +4,26 @@
     press: "Presse"
     internal:  "Internal"
     search: "Søk..."
-    media: "ISFiT i Media"
+    media: "ISFiT i media"
+    back: "Tilbake"
   article:
     header: "NYHETER"
   position:
     no_new_positions: "Vi har dessverre ingen opptak for tiden, men følg med på nettsiden for nye oppdateringer"
+    new_positions: "ISFiT har for øyeblikket opptak på følgende stillinger"
+    apply: "Søk nå"
+    form: "Søknadsskjema"
+    fill_in: "Fyll ut samtlige felter under og klikk på 'Søk nå!' for å levere søknaden."
+    first_choice: "Førstevalg"
+    second_choice: "Andrevalg"
+    third_choice: "Tredjevalg"
+    obligatory: "Obligatorisk"
+  person:
+    first_name: "Fornavn"
+    last_name: "Etternavn"
+    address: "Adresse"
+    phone: "Telefonnummer"
+    phone_nor: "Telefonnummer, 8 siffer"
+    email: "E-postadresse"
+    email_ntnu: "Epostadresse (ved studiested)"
+

@@ -1,7 +1,7 @@
 <% if @positions.length < 1 %>
-  <p><%= t(position.no_new_positions) %></p>
+  <p><%= t("position.no_new_positions") %></p>
 <% else %>
-  <h1>ISFiT har for øyeblikket opptak på følgende stillinger</h1>
+  <h1><%= t("position.new_positions") %></h1>
   <% active_group = nil %>
   <% active_section = nil %>
   <% for position in @positions %>
@@ -10,14 +10,14 @@
     <% if position.group.section and not position.group.section == active_section %>
       </ul>
       <br>
-      <h3><%=h position.group.section.name_no %></h3>
+      <h3><%=h position.group.section.name %></h3>
       <ul>
     <% end %>
-    <h4><%=h position.group.name_no %></h4>
+    <h4><%=h position.group.name %></h4>
     <ul>
     <% end %>
     
-    <li><%= link_to "#{position.title_no}", position_url(params[:tab], position) %></li>
+    <li><%= link_to "#{position.title}", position_url(params[:tab], position) %></li>
     <% active_group = position.group %> 
     <% active_section = position.group.section %>
   <%end%>

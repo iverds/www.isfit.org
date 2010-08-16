@@ -1,0 +1,384 @@
+<script>
+  function setMaxLength() {
+    var x = document.getElementsByTagName('textarea');
+    var counter = document.createElement('div');
+    counter.className = 'counter';
+    for (var i=0;i<x.length;i++) {
+      if (x[i].getAttribute('maxlength')) {
+        var counterClone = counter.cloneNode(true);
+        counterClone.relatedElement = x[i];
+        counterClone.innerHTML = '<span>0</span>/'+x[i].getAttribute('maxlength');
+        x[i].parentNode.insertBefore(counterClone,x[i].nextSibling);
+        x[i].relatedElement = counterClone.getElementsByTagName('span')[0];
+
+        x[i].onkeyup = x[i].onchange = checkMaxLength;
+        x[i].onkeyup();
+      }
+    }
+  }
+
+  function checkMaxLength() {
+    var maxLength = this.getAttribute('maxlength');
+    var currentLength = this.value.length;
+    if (currentLength > maxLength)
+    this.relatedElement.className = 'toomuch';
+    else
+    this.relatedElement.className = '';
+    this.relatedElement.firstChild.nodeValue = currentLength;
+    // not innerHTML
+  }
+
+  function popup(url){
+    var mywin;
+    mywin = window.open(url, '1', 'width=400,height=400,left=0,top=10,scrollbars=yes,resizable=yes');
+    mywin.focus();
+  }
+
+
+
+
+</script>
+
+<h1>Application and travel support form for the Dialogue Groups 2011</h1>
+<p>
+  The ISFiT Dialogue Groups are an initiative to peace building in practice. In a conflict situation, communication and interaction across religious, ethnic or cultural lines are limited or even non-existent. The Dialogue Groups seek to create a space for participants from different sides of conflicts to meet on equal grounds to share experiences. </p>
+<p>
+  The Dialogue Groups 2011 invite students from Rwanda & Burundi, Northern Ireland and Armenia/Azerbaijan to apply for participation in the seminar. </p>
+<p>
+  Four representatives from each side of the three conflicts spend the week before ISFiT at a cabin in Røros. The following week the participants continue the seminar as a part of the International Student Festival in Trondheim. </p>
+<div align=center><h3><b><i>The next ISFiT Dialogue Groups will be held from the 1st to the 20th of February 2011.</i></b></h3></div>
+</br>
+<p>
+  If you are interested in participating in The Dialogue Groups 2011 you should fill in the following form by the 30th of September. Please note that you have to be at least 18 years old and a student on the time of participation. Also make sure that all information is correct and that you use the same name as in your passport. </br>
+  All applications will be read after the 30th of September, and those students who are selected will thereafter receive an invitation by e-mail. Instructions as for how to obtain a visa and other formalities will be given to the invited students. We are sorry that due to limited capacity we cannot invite all applicants, and we wish you luck on your application. </br>
+  Deadline for submitting the application is the <b>30th of September 2010.</b>
+</p>
+
+<% form_for :dialogue_participant, @dialogue_participant, :url => { :tab => params[:tab], :action => "new" } do |f| %>
+
+  <table>
+    <tr valign="top">
+      <td colspan="2">
+        <h3>Personal information:</h3>
+      </td>
+    </tr>
+    <tr valign="top">
+      <td style="text-align:right"><b>First name: </b></td>
+      <td><%= f.text_field :first_name, :style => "width:97%" %> </td>
+    </tr>
+    <tr valign="top">
+      <td style="text-align:right"><b>Middle name: </b></td>
+      <td><%= f.text_field :middle_name, :style => "width:97%" %></td>
+    </tr>
+    <tr valign="top">
+      <td style="text-align:right"><b>Last name: </b></td>
+      <td><%= f.text_field :last_name, :style => "width:97%" %><br />
+        (Name must match passport name) <br />&nbsp;</td>
+    </tr>
+    <tr valign="top">
+      <td style="text-align:right">
+        <b>Address 1: </b><br />
+      </td>
+      <td>
+        <%= f.text_field :address1, :style => "width:97%" %><br>
+        Street address, P.O. box, c/o 
+      </td>
+    </tr>
+    <tr valign="top">
+      <td style="text-align:right">
+        <b>Address 2:</b> <br />
+      </td>
+      <td>
+        <%= f.text_field :address2, :style => "width:97%" %><br />
+        Apartment, building, floor, etc 
+      </td>
+    </tr>
+    <tr valign="top">
+      <td style="text-align:right">	
+        <b>ZIP code: </b>
+      </td>
+      <td><%= f.text_field :zipcode, :style => "width:97%" %></td>
+    </tr>
+    <tr valign="top">
+      <td style="text-align:right"><b>City/Town: </b></td>
+      <td><%= f.text_field :city, :style => "width:97%" %></td>
+    </tr>
+    <tr valign="top">
+      <td style="text-align:right"><b>Country:</b></td>
+      <td>
+        <%=select("dialogue_participant", 
+                         "country_id", @countries.collect {|p| [ p.name, p.id ] })%>
+                         <br />&nbsp;
+                       </td>
+                     </tr>
+                     <tr valign="top">
+                       <td style="text-align:right"><b>Telephone: </b></td>
+                       <td>
+                         <%= f.text_field :phone, :style => "width:97%" %><br />
+                         (Remember the country code)
+                       </td>
+                     </tr>
+                     <tr valign="top">
+                       <td style="text-align:right"><b>Fax/facsimile: </b></td>
+                       <td>
+                         <%= f.text_field :fax, :style => "width:97%" %><br />
+                         (Leave blank if you don't have one)<br />&nbsp;
+                       </td>
+                     </tr>
+                     <tr valign="top">
+                       <td style="text-align:right"><b>Email address: </b></td>
+                       <td><%= f.text_field :email, :style => "width:97%" %></td>
+                     </tr>
+                     <tr valign="top">
+                       <td style="text-align:right"><b>Confirm email address:</b></td>
+                       <td><%= text_field "dialogue_participant", "email_confirmation", :style => "width:97%"%><br />&nbsp;</td>
+                     </tr>
+                     <tr valign="top">
+                       <td style="text-align:right"><b>Nationality: </b></td>
+                       <td><%= f.text_field :nationality, :style => "width:97%" %></td>
+                     </tr>
+                     <tr valign="top">
+                       <td style="text-align:right"><b>Passport number: </b></td>
+                       <td><%= f.text_field :passport, :style => "width:97%" %></td>
+                     </tr>
+                     <tr valign="top">
+                       <td style="text-align:right"><b>Date of birth: </b></td>
+                       <td>
+                         <%= date_select("dialogue_participant", "birthdate", 
+                                         :order => [:year, :month, :day], :use_month_numbers => true, 
+                                :start_year => 1900, :end_year => 1993)	%>
+                              </td>
+                            </tr>
+                            <tr valign="top">
+                              <td style="text-align:right"><b>Sex:</b></td>
+                              <td>
+                                female <%= radio_button("dialogue_participant", "sex", "f") %>
+                                male <%= radio_button("dialogue_participant", "sex", "m") %>
+                                <br />&nbsp;
+                              </td>
+                            </tr>
+                            <tr valign="top">
+                              <td style="text-align:right"><b>University: </b></td>
+                              <td><%= f.text_field :university, :style => "width:97%" %>	</td>
+                            </tr>
+                            <tr valign="top">
+                              <td style="text-align:right"><b>Field of study: </b></td>
+                              <td><%= f.text_field :field_of_study, :style => "width:97%" %>	</td>
+                            </tr>
+                            <tr valign="top">
+                              <td colspan="2">
+                                <br />
+                                <h3>Are you a member of a student organization?</h3>
+                              </td>
+                            </tr>
+                            <tr valign="top">
+                              <td style="text-align:right"><b>Organization name:</b></td>
+                              <td><%= f.text_field :org_name, :style => "width:97%" %></td>
+                            </tr>
+                            <tr valign="top">
+                              <td style="text-align:right"><b>Your postion: </b></td>
+                              <td><%= f.text_field :org_function, :style => "width:97%" %></td>
+                            </tr>
+                          </table>
+
+                          <br />
+                          <br />
+
+                          <h3>Where did you first hear about the Dialogue Groups?</h3>
+                          <table>
+                            <tr>
+                              <td>
+                                <%= radio_button("dialogue_participant", 
+                                "hear_about_isfit", "None") %> None
+                              </td>
+                              <td>
+                                <%= radio_button("dialogue_participant", 
+                                "hear_about_isfit", "Internet") %> Internet
+                              </td>
+                            </tr>		
+                            <tr>
+                              <td>
+                                <%= radio_button("dialogue_participant", 
+                                "hear_about_isfit" ,"Poster") %> Poster
+                              </td>
+                              <td>
+                                <%= radio_button("dialogue_participant", 
+                                "hear_about_isfit" ,"Former dialogue_participant") %> Former participant
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <%= radio_button("dialogue_participant", 
+                                "hear_about_isfit" ,"University") %> University
+                              </td>
+                              <td>
+                                <%= radio_button("dialogue_participant", 
+                                "hear_about_isfit" ,"Student union") %> Student union
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <%= radio_button("dialogue_participant", 
+                                "hear_about_isfit", "Embassy") %> Embassy
+                              </td>
+                              <td><%= radio_button("dialogue_participant", 
+                        "hear_about_isfit", "Mail") %> Mail
+                      </td>
+                    </tr>
+                  </table>
+                  <br />
+                  <b>Other: </b> 
+                  <%= f.text_field :hear_about_isfit_other %>
+
+                  <br /><br />
+                  <table width="580">
+                    <tr>
+                      <td colspan="2">
+                        <h3>Essay 1 - Background  </h3>
+                        <p>
+                          Write an essay (max 300 words) about yourself, your experiences and interests. 
+                          What do you study? What is your motivation for participating in the Dialogue Groups 2011? Have 
+                          you participated in similar seminars before? Are you a member of a student organization? 
+                          If yes, please specify.</p>
+
+                        <%= text_area(:dialogue_participant, :essay1, {:size => "80x20", :maxlength => "2100"}) %>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan="2">
+                        <h3>Essay 2 - The Conflict  </h3>
+                        <p>
+                          Write an essay (maximum 300 words) about the conflict in your country/region. 
+                          How do you experience the conflict? How does it affect your day-to-day life?
+                        </p>
+                        <%= text_area(:dialogue_participant, :essay2, {:size => "80x20", :maxlength => "2100"}) %>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td colspan="2">
+                        <h3>Essay 3 - Visions for your country  </h3>
+                        <p>
+                          Write an essay (maximum 300 words) on what 
+                          visions you have for your country/region. 
+                          What do you wish to achieve? How do you want 
+                          your country or region to develop? 
+                          How can participation in the Dialogue Groups 
+                          help you achieve it?
+                        </p>
+                        <%= text_area(:dialogue_participant, :essay3, {:size => "80x20", :maxlength => "2100"}) %>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan="2">
+                        <h3>Essay 4 - Reflection  </h3>
+                        <p>
+                          Please reflect on (one or more of) the following terms (maximum 150 words all together):
+                          <ul>
+                            <li>dialogue</li>
+                            <li>conflict</li>
+                            <li>resources</li>
+                            <li>global health</li>
+                          </ul>
+
+                        </p>
+                        <%= text_area(:dialogue_participant, :essay4, {:size => "80x20", :maxlength => "1100"}) %>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan="2">
+                        <h3>Apply for travel support  </h3>
+                        <p>ISFiT 2011 aims to have skilled participants with diverse backgrounds regarding geography, 
+                          culture, class and gender. To achieve this goal, ISFiT 2011 will be able to offer some 
+                          participants financial support. To apply for financial support, fill inn the fields below.
+                        </p>
+                        <p>Please note that ISFiT 2011 only has a limited sum to offer, so 
+                          we encourage you to search for alternative ways of financing your travel. Please notice 
+                          that travel funds are only meant to cover travel costs to and from Trondheim and your home 
+                          city. We do not have the possibility to fund visa costs. There are a variety of scholarships 
+                          and legacies you could apply for, or your university may be able to support you. Search, 
+                          and you might be surprised of your possibilities.
+                        </p>
+                        <p>Travel support is only awarded to students who are invited and who attend the festival.</p>
+                        <div style="width: 500px; text-align: center;">
+                          <p style="border-top: 1px solid black; border-bottom: 1px solid black; 
+                            margin-left: 45px; width: 450px; text-align: center;">
+                            <br><strong>Important!</strong><br><br>
+                            <%= check_box("dialogue_participant", "travel_apply", {}) %>
+                            <em>Yes, I want to apply for travel support</em><br><br>
+                          </p>
+                        </div>
+
+
+
+                        <h3>Travel support essay  </h3>
+                        <p>Please write a brief essay about why you should be granted travel support (200 words). 
+                          If you are able to obtain travel support from other sources, please include this in your essay.</p>
+
+                        <%= text_area(:dialogue_participant, :travel_essay, {:size => "80x20", :maxlength => "1400"}) %>
+                        <script>setMaxLength();</script>
+
+                        <br /><br />
+                        <tr>
+                          <td>Amount of money that you are applying for:</td><td> 
+                            <%= f.text_field :travel_amount, :style => "text-align:rigth; width:100px" %>&nbsp;US Dollars</td>
+                          <tr>
+                            <td colspan="2">If you do not receive travel support from ISFiT: </td>
+                          </tr>
+                          <tr>
+                            <td valign="top">- can you obtain financial support from other sources?</td>
+                            <td valign="top">
+                              yes<%= radio_button("dialogue_participant", "travel_nosupport_other", "1") %>
+                              no<%= radio_button("dialogue_participant", "travel_nosupport_other", "0") %>
+                            </td>
+                            <tr>
+                              <td valign="top">- are you still able to come?</td>
+                              <td valign="top">			
+                                yes<%= radio_button("dialogue_participant", "travel_nosupport_cancome", "1") %>
+                                no<%= radio_button("dialogue_participant", "travel_nosupport_cancome", "0") %>
+                                <br />
+                                <br />
+                              </td>
+                            </tr>
+                            <tr>
+                              <td colspan="2">
+                                <hr>
+                              </td>
+                            </tr>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td colspan="2">
+                            <h3>Have you applied or will you apply for ISFiT Workshop?</h3>
+                            (You can only be invited to one of the two, Workshop or Dialogue, but feel free to apply to both.)
+                          </td>
+                        </tr>
+                        <tr>
+                          <td valign="top" style="text_align:center">			
+                            yes<%= radio_button("dialogue_participant", "apply_workshop", "1") %>
+                            no<%= radio_button("dialogue_participant", "apply_workshop", "0") %>
+                            <br />
+                            <br />
+                          </td>
+                        </tr>
+                        <tr>
+                          <td colspan="2">
+                            <h3>Security code</h3>
+                            <p>
+                              Please fill in the two words shown in the box below. If you have problems 
+                              reading the words, press the uppermost button to get a new security security code.
+                            </p>
+                            <p>
+                              <center><%#= get_captcha(:options => {:theme => 'clean'}) %>
+                                <%=raw recaptcha_tags%>
+                                <br /><br />
+                                <%= submit_tag 'Submit',:value => "Submit application" %></center>
+                            </p>
+                          </td>
+                        </tr>
+
+                      </table>
+                    <% end %>
+                    <br />
+                    <br />
+                    <br />

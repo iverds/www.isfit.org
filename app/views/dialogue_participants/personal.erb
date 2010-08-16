@@ -1,0 +1,23 @@
+<h2>Personal information</h2>
+<p>You may update the following personal information:</p>
+<% form_for :participant, @participant do |f| %>
+  <table>
+    <tr><td>Address 1: </td><td><%= f.text_field :address1, :style => "width:400px" %></td></tr>
+    <tr><td>Address 2: </td><td><%= f.text_field :address2, :style => "width:400px"%></td></tr>
+    <tr><td>ZIP code: </td><td><%= f.text_field :zipcode, :style => "width:200px"%></td></tr>
+    <tr><td>City: </td><td><%= f.text_field :city,  :style => "width:200px"%></td></tr>
+    <tr><td>Phone number: </td><td><%= f.text_field :phone, :style => "width:200px"%></td></tr>
+    <tr><td>Fax number: </td><td><%= f.text_field :fax, :style => "width:200px"%></td></tr>
+    <tr><td>University: </td><td><%= f.text_field :university, :style => "width:200px"%></td></tr>
+    <tr><td>Field of study: </td><td><%= f.text_field :field_of_study, :style => "width:200px"%></td></tr>
+    <tr><td>Organization: </td><td><%= f.text_field :org_name, :style => "width:200px"%></td></tr>
+    <tr><td>Organization function: </td><td><%= f.text_field :org_function, :style => "width:200px"%></td></tr>
+		<tr><td colspan="2">&nbsp;</td></tr>
+		<tr><td colspan="2"><p>If you edit any of the following fields, your login information will also be updated accordingly.</p></td></tr>
+    <tr><td>E-mail: </td><td><%= f.text_field :email, :style => "width:200px"%></td></tr>
+    <tr><td>Password: </td><td><%= f.password_field :password, :style => "width:200px"%></td></tr>
+  </table>
+  <br>
+  <%= submit_tag 'Update information' %> <br>
+  
+<% end %>
