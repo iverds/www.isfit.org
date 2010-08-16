@@ -30,9 +30,13 @@
       <div id="omeny" class="grid_25"> <!-- Start omeny -->
         <div id="olinker" class="grid_20"> <!-- Start olinker -->
           <%current_tab = nil%>
+          <% style = "" %>
           <%Tab.find(:all, :conditions => {:top_bar=>"1"}).each do |tab|%>
             <%if tab.tag == params[:tab] 
             current_tab = tab
+            style = "selected"
+          else
+            style = ""
           end
           link = nil
           if tab.sublinks.first.page_id == 0
@@ -46,7 +50,7 @@
             link = page_path(tab.sublinks.first.page, :tab=>tab.tag)
           end
         %>
-        <%= link_to tab.name, link, :class=>"olink"%>      
+        <%= link_to tab.name, link,:id => style, :class=>"olink"%>      
       <%end%>
       <a href="http://internal.isfit.org/" class="olink"><%= t('layout.internal')%></a>
     </div><!-- Slutt olinker -->
