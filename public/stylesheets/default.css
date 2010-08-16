@@ -76,6 +76,9 @@ a:hover {
 #faner a.selected {
         text-decoration: underline;
 }
+#selected {
+  text-decoration: underline;
+}
 
 
 #faner a{

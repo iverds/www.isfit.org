@@ -1,7 +1,6 @@
   <%counter = 0
   first = true
   @articles.each do |article| %>
-    <% if article.title != nil %>
       <%if first %>
         <div id="hoved_artikkel" class="grid_14 alpha omega">
 
@@ -22,6 +21,5 @@
     </div>
     <%#= raw counter%2 == 0 ? "</div>" : ""%>
     <% first = false if first %>
-  <% end %>
 <%end%>
 

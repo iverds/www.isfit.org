@@ -11,6 +11,7 @@ WwwIsfitOrg::Application.routes.draw do
       collection do
        get :new_pic
        get :crop_main
+       get :all
       end
     end
 
