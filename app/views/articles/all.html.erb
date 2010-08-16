@@ -1,0 +1,13 @@
+<% counter = 0 %>
+<% @articles.each do |article| %>
+  <%classtext = "grid_7 articleheight "+  (counter%2 == 0 ? "alpha" : "omega") 
+  counter +=1%>
+  <div id="artikkel" class="<%=classtext%>">
+    <a href="<%=article_path(article, :tab=>params[:tab])%>">
+      <%=image_tag("article_images/"+article.id.to_s+"_2.jpg") %>
+      <h1><%=article.title%></h1>
+      <p><%=article.sub_title%></p>
+    </a>
+  </div>
+
+<%end%>

@@ -18,6 +18,9 @@
     second_choice: "Andrevalg"
     third_choice: "Tredjevalg"
     obligatory: "Obligatorisk"
+    about_you: "Informasjon om deg"
+    background: "Relevant bakgrunn"
+    hear_about: "Hvordan fikk du høre om ISFiT?"
   person:
     first_name: "Fornavn"
     last_name: "Etternavn"
