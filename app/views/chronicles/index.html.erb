@@ -6,10 +6,8 @@
 <h1>  <%= @chronicle.title %></h1>
 <h4>  <%= @chronicle.author %></h4>
 <p class="ingress">
-  <%= @chronicle.ingress %>
+  <%=raw format(@chronicle.ingress) %>
 </p>
-<p class="body">
-  <%=raw format(@chronicle.body) %>
-</p>
+<%= link_to "Les mer", chronicle_path(params[:tab], @chronicle), :style => "color: black"%>
 </div>
 <!-- Tip of the hat til deg som oppdaget denne! -Dag -->
