@@ -164,7 +164,9 @@
     <div id="hoyreramme" class="grid_5"><!-- Start hoyreramme -->
       <div id="boksgronn_bg" class="grid_5 alpha omega"><!-- Start grønn -->
         <div id="boksgronn" class="grid_5 alpha omega">
-           <%= image_tag("applyforisfit2.png")%>
+        
+         <% link = Language.to_s == "no" ? "http://www.isfit.org/opptak" : "http://www.isfit.org/participant/pages/36" %>
+           <%= link_to (image_tag("applyforisfit2.png"),link )%>
           </div>
       </div><!-- Slutt grønn -->
       <!--
