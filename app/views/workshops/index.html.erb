@@ -1,0 +1,7 @@
+<h1>ISFiT 2009 Workshops</h1>
+<p>The main topic of ISFiT 2009 is peacebuilding. ISFiT 2009 looks upon peacebuilding as a long-term process which aims at establishing a stable and lasting peace, a peace which is more than absence of war. A process which builds solid foundations for peaceful developement and increases a society’s capasity to handle conflicts in a peaceful way. ISFiT 2009 understands peacebuilding as both a preventive and a reconstructive process. ISFiT 2009 wants to explore how a peaceful future can be buildt. By presenting a broad spectra of activities we wish to look at the diversity of peacebuilding. All our workshops are in various ways connected to the main topic.</p>
+<% @workshops.each do |workshop| %>
+<a name="ws<%= workshop.id %>"><h2><%= workshop.id < 10 ? "0" : "" %><%= 
+	"#{workshop.id}. #{workshop.name}" %></h2></a>
+<p><%= raw format(workshop.description) %></p>
+<% end %>
