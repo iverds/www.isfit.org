@@ -3,6 +3,6 @@ class Chronicle < ActiveRecord::Base
 
   # Finner og returnerer kronikken med høyest vekt
   def self.find_highest_weight
-    Chronicle.find(:first, :order => :weight)
+    Chronicle.find(:first, :order => "weight DESC")
   end
 end

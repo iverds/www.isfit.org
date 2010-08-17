@@ -40,6 +40,8 @@ WwwIsfitOrg::Application.routes.draw do
 
   match ':tab/events/:year/:month/:day' => 'events#showDate', :as => :events
 
+  match 'opptak' => "positions#index", :tab => "admission"
+
   root :to => "articles#index" , :tab=>"news"
 
   # The priority is based upon order of creation:

@@ -1,35 +1,15 @@
-<h1>Listing chronicles</h1>
+<!-- Localize this! -->
+<%@chronicle = Chronicle.find_highest_weight%>
+<%= image_tag("chronicle_comment_#{Language.to_s}", :style=>"margin:0px;")%>
 
-<table>
-  <tr>
-    <th>Title en</th>
-    <th>Title no</th>
-    <th>Ingress en</th>
-    <th>Ingress no</th>
-    <th>Body en</th>
-    <th>Body no</th>
-    <th>Author</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @chronicles.each do |chronicle| %>
-  <tr>
-    <td><%= chronicle.title_en %></td>
-    <td><%= chronicle.title_no %></td>
-    <td><%= chronicle.ingress_en %></td>
-    <td><%= chronicle.ingress_no %></td>
-    <td><%= chronicle.body_en %></td>
-    <td><%= chronicle.body_no %></td>
-    <td><%= chronicle.author %></td>
-    <td><%= link_to 'Show', chronicle %></td>
-    <td><%= link_to 'Edit', edit_chronicle_path(chronicle) %></td>
-    <td><%= link_to 'Destroy', chronicle, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Chronicle', new_chronicle_path %>
+<div class="boks-left">
+<h1>  <%= @chronicle.title %></h1>
+<h4>  <%= @chronicle.author %></h4>
+<p class="ingress">
+  <%= @chronicle.ingress %>
+</p>
+<p class="body">
+  <%=raw format(@chronicle.body) %>
+</p>
+</div>
+<!-- Tip of the hat til deg som oppdaget denne! -Dag -->
