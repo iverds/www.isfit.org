@@ -63,11 +63,12 @@
     </div><!-- Slutt odiverse -->
   </div><!-- Slutt omeny -->
   <div id="header" class="grid_25" ><!-- Start header -->
-    <%=link_to (image_tag("isfitlogo.png", :class=>"isfitlogo"), root_path) %>
+    <%=link_to (image_tag("header_#{Language.to_s}.png", :class=>"isfitlogo"), root_path) %>
   </div><!-- Slutt header -->
   <div id="meny" class="grid_25"><!-- Start meny -->
     <div id="faner" class="grid_20"><!-- Start faner -->
       <%Tab.find(:all, :conditions => {:top_bar=>"0"}).each do |tab|%>
+      <% if tab.name != ""%>
         <% style = "" %>
         <%if tab.tag == params[:tab] 
         current_tab = tab
@@ -86,6 +87,7 @@
       end
     %>
     <%= link_to tab.name, link, :class => style%><%=image_tag("menyspacer.png", :class=>"menyspacer")%>
+    <%end%>
   <%end%>
 </div><!-- Slutt faner -->
 <div id="sok" class="grid_4"><!-- Start søk -->
@@ -204,6 +206,7 @@
   </div><!-- Slutt ramme -->
   <div id="footer" class="grid_25"><!-- Start footer -->
     <%=link_to(image_tag("isfitliten.png", :class=>"footerlogo"), root_path)%>
+    <p style="color:pink; text-align:center">Editor in Chief: Sanna Drogset Børstad, sannadro[at]isfit.org. All written material and the ISFiT logo is copyrighted the ISFiT Foundation © 2011. </p>
   </div><!-- Slutt footer -->
 </div><!-- Slutt hovedramme -->
 </body>
