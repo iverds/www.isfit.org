@@ -55,13 +55,14 @@ a:hover {
 }
 
 #header {
-	background: #fff url(../images/header-01.png);
+	/*background: #fff url(../images/header-eng.png);*/
 	height: 246px;
 	clear: both;
 }
 
 .isfitlogo {
-	margin: 71px 0 0 28px;
+	/*margin: 71px 0 0 28px;*/
+
 }
 
 #meny {
