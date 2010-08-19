@@ -317,13 +317,14 @@ div.field_with_errors textarea {
 }
 
 #boksgronn_bg {
-	background: url(../images/boksgronnbg.png) repeat-y;
+/*	background: url(../images/boksgronnbg.png) repeat-y;*/
 	margin-bottom: 10px;
 }
 
 #boksgronn {
-	background: url(../images/boksgronn.png) no-repeat;
-	height: 218px;
+/*	background: url(../images/boksgronn.png) no-repeat;*/
+/*	height: 218px;*/
+height:auto;
 }
 
 #footer {

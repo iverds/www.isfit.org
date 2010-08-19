@@ -164,8 +164,12 @@
     <div id="hoyreramme" class="grid_5"><!-- Start hoyreramme -->
       <div id="boksgronn_bg" class="grid_5 alpha omega"><!-- Start grønn -->
         <div id="boksgronn" class="grid_5 alpha omega">
-          <h1>IT ER KULT</h1>
-        </div>
+        
+         <% link = Language.to_s == "no" ? "http://www.isfit.org/opptak" : "http://www.isfit.org/participant/pages/36"  
+            url = Language.to_s =="no" ? "applyforisfit_no.png" : "applyforisfit_en.png"
+         %>
+           <%= link_to (image_tag(url),link )%>
+          </div>
       </div><!-- Slutt grønn -->
       <!--
       <div id="boksbla_bg" class="grid_5 alpha omega">

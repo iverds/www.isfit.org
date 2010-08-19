@@ -1,0 +1,7 @@
+<h1>ISFiT 2011 Workshops</h1>
+<p>ISFiT is a meeting place where students come together, to discuss, listen and understand. The workshops are small working groups where participants gather to share experiences and discuss topics related to the overall theme of ISFiT 2011: global health. Some workshops are deeply thematic, while others are more practical and creative approach to the theme. There are approximately 30 participants from different countries and cultures in one workshop. Each workshop is facilitated by four local students. ISFiT believes that small working groups enhance the possibility for the participants to learn to know each other. The workshops are mandatory, and participants belong to one workshop during the whole festival. This is a great arena to inspire and get inspired, share ideas and feelings, and build long lasting friendships across borders. You do not need any special experience within the theme of your workshop, your interest and engagement is the best contribution</p>
+<% @workshops.each do |workshop| %>
+<a name="ws<%= workshop.id %>"><h2><%= workshop.id < 10 ? "0" : "" %><%= 
+	"#{workshop.id}. #{workshop.name}" %></h2></a>
+<p><%= raw format(workshop.description) %></p>
+<% end %>

@@ -249,7 +249,7 @@
                   <td><%= radio_button("participant", "workshop1", "#{workshop.id}") %> </td>
                   <td> <%= radio_button("participant", "workshop2", "#{workshop.id}") %> </td>
                   <td>	<%= radio_button("participant", "workshop3", "#{workshop.id}") %> </td>
-                  <td><a href="javascript:popup('http://www.isfit.org/apply/workshop#ws<%= workshop.id %>');">
+                  <td><a href="javascript:popup('http://www.isfit.org/participant/workshops#ws<%= workshop.id %>');">
                       WS<%= workshop.id < 10 ? "0#{workshop.id}" : "#{workshop.id}" %> 
                       <%= " - #{workshop.name}" %></a></td>
                 <%end%>
