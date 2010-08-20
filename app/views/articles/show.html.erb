@@ -10,11 +10,13 @@
 <%=  @article.created_at.strftime("%F")%>
 </p>
 <br />
+<span style="text-align:justify">
 <p>
   <b><%=raw format( @article.ingress) %></b>
 </p>
 <br />
-<p>
+<p style="text-align:justify">
   <%= raw format(@article.body) %>
 </p>
+</span>
 
