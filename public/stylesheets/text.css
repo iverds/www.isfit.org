@@ -98,4 +98,12 @@ div.boks p.body {
 p {
   padding: 0.3em 0;
 }
+div#article p
+{
+  text-align:justify;
+}
 
+div#article {
+ padding-left:10px;
+ padding-right:10px;
+}
