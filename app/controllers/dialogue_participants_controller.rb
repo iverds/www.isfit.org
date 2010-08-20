@@ -24,7 +24,7 @@ class DialogueParticipantsController < ApplicationController
 		if @dialogue_participant.valid? && verify_recaptcha(:model=>@dialogue_participant, :message=>"Recaptcha verification failed") && @dialogue_participant.save
 			Postoffice.deliver_registered(@dialogue_participant.first_name + " " + @dialogue_participant.last_name, @dialogue_participant.email)
 			flash[:notice] = "Your application was sent successfully. You should receive an email as a conformation at the email you provided"
-                        redirect_to :action => "register"
+                        render :action => "new"
 		else
       verify_recaptcha(:model=>@dialogue_participant, :message=>"Recaptcha verification failed")
 

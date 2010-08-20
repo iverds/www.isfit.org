@@ -165,8 +165,10 @@
       <div id="boksgronn_bg" class="grid_5 alpha omega"><!-- Start grønn -->
         <div id="boksgronn" class="grid_5 alpha omega">
         
-         <% link = Language.to_s == "no" ? "http://www.isfit.org/opptak" : "http://www.isfit.org/participant/pages/36" %>
-           <%= link_to (image_tag("applyforisfit2.png"),link )%>
+         <% link = Language.to_s == "no" ? "http://www.isfit.org/opptak" : "http://www.isfit.org/participant/pages/36"  
+            url = Language.to_s =="no" ? "applyforisfit_no.png" : "applyforisfit_en.png"
+         %>
+           <%= link_to (image_tag(url),link )%>
           </div>
       </div><!-- Slutt grønn -->
       <!--
@@ -179,7 +181,7 @@
       <div id="boksrod_bg" class="grid_5 alpha omega"><!-- Start rød -->
         <div id="boksrod" class="grid_5 alpha omega">
           <div class="boks">
-            <h3 style="color:white; font-size:14px;">Student Peace Prize</h3><br />
+            <h3>Student Peace Prize</h3><br />
             <ul style="list-style-type:none; margin: 0 0 0 -20px;">
               <%SppArticle.find_five_latest.each do |article|%>
                 <li><%=link_to( article.title_en, "http://www.studentpeaceprize.org/articles/#{article.id}?tab=home", :target=>"_blank" )%></li>
@@ -192,7 +194,7 @@
       <div id="boksoransje_bg" class="grid_5 alpha omega"><!-- Start oransje -->
         <div id="boksoransje" class="grid_5 alpha omega">
           <div class="boks">
-            <h3><%= t("layout.media") %></h3>
+          <h3><%= t("layout.media") %></h3><br>
              <ul style="list-style-type:none; margin: 0 0 0 -20px;">
               <%IsfitMediaLink.find_five_latest.each do |link|%>
                 <li><%=link_to( link.short_desc, link.link, :target=>"_blank" )%></li>

@@ -14,6 +14,8 @@ WwwIsfitOrg::Application.routes.draw do
        get :all
       end
     end
+    
+    resources :workshops
 
     resources :participants
     
