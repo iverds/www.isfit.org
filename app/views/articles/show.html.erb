@@ -5,7 +5,7 @@
 <p>
 <%=image_tag "article_images/"+@article.id.to_s + "_3.jpg"%>
 <br />
-<%= @article.byline%>
+<%=raw @article.byline%>
 </p>
 <p>
 <%=  @article.created_at.strftime("%F")%>
