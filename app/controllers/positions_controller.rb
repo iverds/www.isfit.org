@@ -1,7 +1,16 @@
 class PositionsController < ApplicationController
  def index
   @positions = Position.find_all_active_positions
- end
+  @temp = []
+  @positions.each do |p|
+    if p.group.section.name_en == "Theme Section"
+      @temp.unshift(p)
+    else
+      @temp << p
+    end
+  end
+  @positions = @temp
+  end
  
  def show
    @position = Position.find_by_id(params[:id])
