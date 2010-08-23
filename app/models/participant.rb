@@ -44,7 +44,7 @@ class Participant < ActiveRecord::Base
 	validates_presence_of :essay1
 	validates_presence_of :essay2
 	validates_length_of :essay1, :maximum=>1900, :message => "Essay 1 too long"
-	validates_length_of :essay2, :maximum=>1900, :message => "Essay 2 too long"
+	validates_length_of :essay2, :maximum=>2300, :message => "Essay 2 too long"
 	validates_length_of :travel_essay, :maximum=>1500, :message => "Travel essay too long"
 	
 	validates_presence_of :birthdate, :message => "not valid"

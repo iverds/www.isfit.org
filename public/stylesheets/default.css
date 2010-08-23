@@ -340,17 +340,17 @@ height:auto;
 }
 
 .photo_full {
-  width: 540px;
+  width: 530px;
 }
 
 .photo_left {
   float:left;
-  width:258px;
+  width:253px;
   padding-right: 10px;
 }
 
 .photo_right {
   float:right;
-  width:258px;
+  width:253px;
   padding-left: 10px;
 }

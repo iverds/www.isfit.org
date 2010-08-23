@@ -1,10 +1,11 @@
+<div id="article">
 <h3>
   <%= @article.title %>
 </h3>
 <p>
 <%=image_tag "article_images/"+@article.id.to_s + "_3.jpg"%>
 <br />
-<%= @article.byline%>
+<%=raw @article.byline%>
 </p>
 <p>
 <%=  @article.created_at.strftime("%F")%>
@@ -14,7 +15,9 @@
   <b><%=raw format( @article.ingress) %></b>
 </p>
 <br />
-<p>
+<p style="text-align:justify">
   <%= raw format(@article.body) %>
 </p>
+</div>
+
 
