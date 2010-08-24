@@ -10,7 +10,7 @@ end
 
 class Array
   def to_select
-    self.collect { |x| ["#{x.title_no} - #{x.group == nil ? '' : x.group.name_no}",x.id] }
+    self.collect { |x| ["#{x.title} - #{x.group == nil ? '' : x.group.name}",x.id] }
   end
 end
 
