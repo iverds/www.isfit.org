@@ -7,6 +7,7 @@ class DialogueParticipantsController < ApplicationController
 
   def new
 	@countries = Country.find(:all, :order=>"name")
+
 	if request.post?
 
 		begin
@@ -27,10 +28,12 @@ class DialogueParticipantsController < ApplicationController
                         render :action => "new"
 		else
       verify_recaptcha(:model=>@dialogue_participant, :message=>"Recaptcha verification failed")
-
+      flash[:notice] = nil
 			#validate_recap(params, @dialogue_participant.errors)
-			flash[:warnings] = @dialogue_participant.errors
+			#flash[:warnings] = @dialogue_participant.errors
 		end
+  else
+  @dialogue_participant = DialogueParticipant.new
 	end
   end
 end

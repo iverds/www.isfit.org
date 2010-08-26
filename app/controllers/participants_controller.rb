@@ -1,5 +1,4 @@
 class ParticipantsController < ApplicationController
-  session :off
 
   def index
     #Simple redirection
@@ -39,6 +38,7 @@ class ParticipantsController < ApplicationController
     else
       verify_recaptcha(:model=>@participant, :message=>"Recaptcha verification failed")
       render :tab=>params[:tab], :action=>"new"
+      flash[:notice] = nil
 
     end
   end

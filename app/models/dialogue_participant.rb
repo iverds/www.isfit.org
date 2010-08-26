@@ -7,25 +7,25 @@ class DialogueParticipant < ActiveRecord::Base
 #		:too_long => "Password must be between 8 and 255 characters."
 
 	#Validate General
-	validates_presence_of :first_name, :message => "First name can't be blank"
-	validates_presence_of :last_name, :message => "Last name can't be blank"
-	validates_presence_of :address1, :message => "Address 1 can't be blank"
-	validates_presence_of :zipcode, :message => "ZIP code can't be blank"
-	validates_presence_of :city, :message => "City can't be blank"
-	validates_inclusion_of :country_id, :in => 1..200, :message => "Country not selected"
-	validates_presence_of :phone, :message => "Phone number can't be blank"
-	validates_presence_of :nationality, :message => "Nationality can't be blank"
-	validates_presence_of :passport, :message => "Nationality can't be blank"
-	validates_presence_of :sex,  :message => "Sex must be selected"	
-	validates_presence_of :university,  :message => "University can't be blank"
-	validates_presence_of :field_of_study,  :message => "Field of study can't be blank"
+	validates_presence_of :first_name
+	validates_presence_of :last_name
+	validates_presence_of :address1
+	validates_presence_of :zipcode
+	validates_presence_of :city
+	validates_inclusion_of :country_id, :in => 1..200, :message => "not selected"
+	validates_presence_of :phone
+	validates_presence_of :nationality
+	validates_presence_of :passport
+	validates_presence_of :sex	
+	validates_presence_of :university
+	validates_presence_of :field_of_study
 	#validates_presence_of :workshop1,  :message => "Workshop 1 not selected"
 	#validates_presence_of :workshop2,  :message => "Workshop 2 not selected"	
-	validates_presence_of :essay1, :message => "Essay 1 can't be blank"
-	validates_presence_of :essay2, :message => "Essay 2 can't be blank"
-	validates_presence_of :essay3, :message => "Essay 3 can't be blank"
-	validates_presence_of :essay4, :message => "Essay 4 can't be blank"
-	validates_presence_of :birthdate, :message => "Birth date not valid"
+	validates_presence_of :essay1
+	validates_presence_of :essay2
+	validates_presence_of :essay3
+	validates_presence_of :essay4
+	validates_presence_of :birthdate
 	validates_presence_of :apply_workshop, :message => "Have you applied or will you apply for ISFiT Workshop?"
 
 	#Validate essay-length
@@ -41,8 +41,8 @@ class DialogueParticipant < ActiveRecord::Base
 	#Validate Email
     validates_format_of :email,
       			:with => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i,
-      			:message => 'Email must be valid'
-	validates_confirmation_of :email, :message => "Email should match confirmation"
+      			:message => 'must be valid'
+	validates_confirmation_of :email, :message => "should match confirmation"
 	validates_uniqueness_of :email, :message => "An application with this email address has already been registered"
 
 	#Validate Self defined

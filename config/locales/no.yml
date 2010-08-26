@@ -29,4 +29,7 @@
     phone_nor: "Telefonnummer, 8 siffer"
     email: "E-postadresse"
     email_ntnu: "Epostadresse (ved studiested)"
-
+  activerecord:
+    errors:
+      messages:
+        blank: "can't be blank"

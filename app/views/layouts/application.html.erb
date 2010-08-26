@@ -3,9 +3,6 @@
   <head>
     <title>ISFiT 2011</title>
     <%= stylesheet_link_tag :all %>
-    <%#= stylesheet_link_tag "default" %>
-    <%#= stylesheet_link_tag "reset" %>
-    <%#= stylesheet_link_tag "text" %>
     <%= javascript_tag "var AUTH_TOKEN = #{form_authenticity_token.inspect};" if protect_against_forgery? %>
     <%= javascript_include_tag 'jquery','application', 'jquery.simplemodal-1.3.5.min', 'imgareaselect'%>
     <%= yield :script %>
