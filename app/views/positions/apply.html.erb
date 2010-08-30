@@ -2,6 +2,19 @@
   <%= javascript_include_tag 'new_applicant' %>
 <%end%>
 <h1><%= t("position.form")%></h1>
+<% if @applicant.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@applicant.errors.count, "error") %>:</h2>
+
+    <ul>
+      <% @applicant.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+
 <h4>You can only apply as a voluenteer if you are a student in Trondheim. If you want to apply as a participant, please go <%=link_to("here", "http://www.isfit.org/participant/pages/36")%></h4>
 <br />
 <p><%= t("position.fill_in") %></p>
