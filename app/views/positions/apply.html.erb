@@ -1,3 +1,6 @@
+<%if true%>
+  ISFiT 2011 har for tiden ingen opptak
+<%else%>
 <% content_for :script do %>
   <%= javascript_include_tag 'new_applicant' %>
 <%end%>
@@ -55,4 +58,4 @@
 <% end %>
 
 
-
+<%end%>
