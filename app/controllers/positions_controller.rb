@@ -30,7 +30,7 @@ class PositionsController < ApplicationController
         @positions = Position.find_all_active_positions
         format.html { render :action => :index }
       else
-        flash[:warnings] = @applicant.errors
+        flash[:notice] = nil
         @positions = Position.find_all_active_positions_alfa
         @positions << Position.new
         @positions.reverse    
