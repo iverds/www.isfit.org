@@ -7,11 +7,11 @@
         <%else
           %>
           <%#=raw counter%2 == 0 ? "<div>" : ""%>
-          <%classtext = "grid_7 articleheight "+  (counter%2 == 0 ? "alpha" : "omega")
+          <%classtext = "artikkel grid_7 articleheight "+  (counter%2 == 0 ? "alpha" : "omega")
           counter +=1
         %>
 
-            <div id="artikkel" class="<%=classtext%>">
+            <div class="<%=classtext%>">
       <%end%>
       <a href="<%=article_path(article, :tab=>params[:tab])%>">
         <%=image_tag("article_images/"+article.id.to_s+"_"+ (first ? "1" : "2")+".jpg") %>

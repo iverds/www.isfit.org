@@ -47,7 +47,11 @@
             link = page_path(tab.sublinks.first.page, :tab=>tab.tag)
           end
         %>
-        <%= link_to tab.name, link,:id => style, :class=>"olink"%>      
+        <%if style == ""%>
+          <%= link_to tab.name, link, :class=>"olink"%>      
+        <%else%>
+          <%= link_to tab.name, link,:id => style, :class=>"olink"%>      
+        <%end%>
       <%end%>
       <a href="http://internal.isfit.org/" class="olink"><%= t('layout.internal')%></a>
     </div><!-- Slutt olinker -->

@@ -257,26 +257,26 @@ div.field_with_errors textarea {
 	font-size: 15px;
 }
 
-#artikkel {
+.artikkel {
 	background: #fff;
 	padding: 10px 0 10px 0;
 	margin-bottom: 10px;
 }
 
-#artikkel h1 {
+.artikkel h1 {
 	margin: 0px 10px 0 10px;
 	color: #000;
 	font-size: 12px;
 	font-weight: bold;
 }
 
-#artikkel img {
+.artikkel img {
 	margin: 10px 10px 5px 10px;
 	height: 120px;
 	width: 250px;
 }
 
-#artikkel p {
+.artikkel p {
 	margin: 0px 10px 0 10px;
 	color: #000;
 	font-size: 12px;
