@@ -1,0 +1,13 @@
+<%model = locals[:model]%>
+<% if model.errors.any? %>
+  <div id="error_explanation">
+    <h4><%=model.errors.count%> <%#= pluralize(model.errors.count, t('errors.count')) %> <%=t('errors.description') %></h4>
+
+    <ul>
+      <% model.errors.each do |key, value| %>
+        <li><%=t 'helpers.label.'+model.class.name.to_s.underscore+'.'+key.to_s %> <%=value%></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+

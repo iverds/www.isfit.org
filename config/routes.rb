@@ -1,5 +1,7 @@
 WwwIsfitOrg::Application.routes.draw do  
 
+
+
   resources :isfit_media_links
 
   scope "(/:tab)" do
@@ -35,7 +37,9 @@ WwwIsfitOrg::Application.routes.draw do
        post :validate
       end
     end 
-    resources :events       
+    resources :events      
+
+    resources :wop_propositions
   end
   
   resources :events
@@ -44,7 +48,7 @@ WwwIsfitOrg::Application.routes.draw do
 
   match 'opptak' => "positions#index", :tab => "admission"
    match 'apply/position' => "positions#index", :tab => "admission"
-  match 'wop' => redirect("http://www.isfit.org/wop/pages/42")
+  match 'wop' => redirect("http://www.isfit.org/wop/wop_propositions/new")
   root :to => "articles#index" , :tab=>"news"
 
   # The priority is based upon order of creation:

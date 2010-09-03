@@ -1,0 +1,52 @@
+<%= render 'partials/error', :locals=> {:model => @wop_proposition} %>
+<h1>Påmeldingsskjema designkonkurranse</h1>
+<%= form_for @wop_proposition, :url => { :tab=>params[:tab], :action => "create" }, :html => {:multipart => true} do |f|%>
+<div style="float:left; margin-right:10px;">
+<b><%= f.label :firstname%></b><br />
+<%= f.text_field :firstname%>
+</div>
+
+<div>
+<b><%= f.label :lastname%></b><br />
+<%= f.text_field :lastname %>
+</div>
+
+<div style="float:left; margin-right:10px;">
+<b><%= f.label :address %></b><br />
+<%= f.text_field :address%>
+</div>
+
+<div>
+<b><%= f.label :zipcode %></b><br />
+<%= f.text_field :zipcode %>
+</div>
+
+<div style="float:left; margin-right: 10px">
+<b><%= f.label :study_place %></b><br />
+<%= f.text_field :study_place%>
+</div>
+
+
+<div>
+<b><%= f.label :phone %></b><br />
+<%= f.text_field :phone%>
+</div>
+
+<div>
+<b><%= f.label :email %></b><br />
+<%= f.text_field :email%>
+</div>
+<div>
+<b><%= f.label :description %></b><br />
+<%= f.text_area :description, :cols=>50%>
+</div>
+
+<br />
+<br />
+<div>
+<%= raw recaptcha_tags %>
+</div>
+<br />
+<%= f.submit "Send"%>
+<%end%>
+

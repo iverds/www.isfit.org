@@ -32,4 +32,23 @@
   activerecord:
     errors:
       messages:
-        blank: "can't be blank"
+        blank: "må fylles ut"
+        format: "Tullball"
+    attributes:
+      firstname:
+        blank: "Tull"
+  errors:
+    description: "feil forhindret skjemaet fra å bli sendt"
+    count: "feil"
+  helpers:
+    label:
+      wop_proposition:
+        firstname: Fornavn
+        lastname: Etternavn
+        address: Addresse
+        zipcode: Postnummer
+        study_place: Utdanningssted
+        phone: Telefonnummer
+        email: E-post
+        description: Beskrivelse 
+        base: "" 
