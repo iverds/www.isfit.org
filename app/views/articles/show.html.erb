@@ -16,7 +16,11 @@
 </p>
 <br />
 <p style="text-align:justify">
-  <%= raw format(@article.body) %>
+  <% if @article.body == "" %>
+    This article is not available in your language
+  <%else%>
+    <%= raw format(@article.body) %>
+  <%end%>
 </p>
 </div>
 
