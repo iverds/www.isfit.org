@@ -1,6 +1,20 @@
+<% if @article.body == "" || @article.ingress == ""
+    in_language = false
+  else
+    in_language = true
+  end%>
 <div id="article">
+<% unless in_language%>
+<h4>We are sorry, but the following article is not available in your language</h4>
+<br />
+<br />
+<%end%>
 <h3>
-  <%= @article.title %>
+  <%if in_language%>
+    <%= @article.title %>
+  <%else%>
+    <%= I18n.locale.to_s == 'no' ? @article.title_en : @article.title_no%>
+  <%end%>
 </h3>
 <p>
 <%=image_tag "article_images/"+@article.id.to_s + "_3.jpg"%>
@@ -11,17 +25,26 @@
 <%=  @article.created_at.strftime("%F")%>
 </p>
 <br />
+<br />
+<%if in_language%>
 <p>
   <b><%=raw format( @article.ingress) %></b>
 </p>
 <br />
 <p style="text-align:justify">
-  <% if @article.body == "" %>
-    This article is not available in your language
-  <%else%>
     <%= raw format(@article.body) %>
-  <%end%>
 </p>
+<%else%>
+<p>
+  <b><%=raw format( I18n.locale.to_s == 'no' ? @article.ingress_en : @article.ingress_no) %></b>
+</p>
+<br />
+<p style="text-align:justify">
+    <%= raw format( I18n.locale.to_s =='no' ? @article.body_en : @article.body_no) %>
+</p>
+
+
+<%end%>
 </div>
 
 

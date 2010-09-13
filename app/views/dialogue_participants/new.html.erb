@@ -35,20 +35,20 @@
     mywin.focus();
   }
 
-/*$(document).ready(function() {
+$(document).ready(function() {
   $('#dialogue_participant_country_id').change(function() {
     var c_id = $('#dialogue_participant_country_id').val();
-    if (c_id != 201 && c_id != 8 && c_id != 11 && c_id != 146) {
-    alert('You have selected a country not in any of the conflict areas. Please blalbla');
+    if (c_id != 201 && c_id != 8 && c_id != 11 && c_id != 14 && c_id != 29) {
+    alert('The country you have selected is not one of the conflict areas. Please make sure you want to participate in the dialogue groups and not in the workshops');
     var country = $('#dialogue_participant_country_id :selected').text();
-    $('#country_info').html(country + " is not in any of the conflict areas. Please confirm this or that, or contact us at info-dialogue@isfit.org");
+    $('#country_info').html(country + " is not in one of the conflict areas. Please make sure you want to participate in the dialogue groups and not in the workshops'.<br /> If you have any questions, please contact us at info-dialogue@isfit.org");
     }
      else {
-    $('#country_info').html("If you could not find your country in the list, please contact us at info-dialogue@isfit.org");
+    $('#country_info').html("If your country is not on the list, please contact us at info-dialogue@isfit.org");
     }
     });
 });
-*/
+
 </script>
 <%end%>
 <h1>Application and travel support form for the Dialogue Groups 2011</h1>
@@ -135,10 +135,10 @@
       <br />&nbsp;
       </td>
     </tr>
-<!--    <tr valign="top">
+   <tr valign="top">
       <td style="text-align:right"></td>
-      <td id="country_info" style="color:red">Please contact me</td>
-    </tr>-->
+      <td id="country_info" style="color:red">If you can not find your country in the list, please contact us at info-dialogue@isfit.org</td>
+    </tr>
     <tr valign="top">
       <td style="text-align:right"><b>Telephone: </b></td>
       <td>
