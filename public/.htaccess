@@ -30,7 +30,6 @@ RewriteEngine On
 #RewriteBase /~kristfag/www.isfit.org/public
 #RewriteBase /~skjervum/www.isfit.org_rails3/public
 
-RailsEnv development
 
 
 
