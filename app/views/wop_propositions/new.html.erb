@@ -1,3 +1,6 @@
+<%if true%>
+  Fristen for å sende inn forslag har gått ut. Kontakt aaseheim[at]isfit.org for eventuelle spørsmål.
+<%else%>
 <%= render 'partials/error', :locals=> {:model => @wop_proposition} %>
 <h1>Påmeldingsskjema designkonkurranse</h1>
 <%= form_for @wop_proposition, :url => { :tab=>params[:tab], :action => "create" }, :html => {:multipart => true} do |f|%>
@@ -49,4 +52,4 @@
 <br />
 <%= f.submit "Send"%>
 <%end%>
-
+<%end%>
