@@ -54,13 +54,16 @@
         <%end%>
       <%end%>
       <a href="http://internal.isfit.org/" class="olink"><%= t('layout.internal')%></a>
+<p class="olink" style="float:right"><%="#{@days.to_i} days, #{@hours.to_i} hours, #{@minutes.to_i} minutes and #{@seconds.to_i} seconds left to apply"%></p>
+
     </div><!-- Slutt olinker -->
     <div id="odiverse" class="grid_4"><!-- Start odiverse -->
+
       <%= link_to (image_tag("gb.png"),{:tab=>params[:tab], :locale=>"en"}, :class=>"oflagg") %>
       <%= link_to (image_tag("no.png"),{:tab=>params[:tab], :locale=>"no"}, :class=>"oflagg") %>
       <%= link_to (image_tag("facebook.png"), "http://www.facebook.com/group.php?gid=116305974170&ref=ts", :target=>"_blank", :class=>"obilde")%>
       <%= link_to (image_tag("twitter.png"), "http://twitter.com/isfit", :class=>"obilde", :target=>"_blank")%>
-      <!--<a href="#rss" class="obilde"><img src="images/rss.png"></a>-->
+            <!--<a href="#rss" class="obilde"><img src="images/rss.png"></a>-->
     </div><!-- Slutt odiverse -->
   </div><!-- Slutt omeny -->
   <div id="header" class="grid_25" ><!-- Start header -->
