@@ -12,7 +12,7 @@ class DialogueParticipant < ActiveRecord::Base
 	validates_presence_of :address1
 	validates_presence_of :zipcode
 	validates_presence_of :city
-	validates_inclusion_of :country_id, :in => 1..200, :message => "not selected"
+	validates_inclusion_of :country_id, :in => 1..201, :message => "not selected"
 	validates_presence_of :phone
 	validates_presence_of :nationality
 	validates_presence_of :passport
