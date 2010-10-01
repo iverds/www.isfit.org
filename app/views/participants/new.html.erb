@@ -34,13 +34,13 @@
     mywin = window.open(url, '1', 'width=400,height=400,left=0,top=10,scrollbars=yes,resizable=yes');
     mywin.focus();
   }
-
-
-
-
 </script>
 <%end%>
 <span style="text-align: right;float: right;"><%=link_to "Apply for ISFiT 2011 dialoguegroups here!", new_dialogue_participant_path(:tab => params[:tab])%></span><br />
+<%if true%>
+  The deadline for the applications has passed. <br />
+  Contact question@isfit.org for questions.
+<%else%>
 <% if @participant.errors.any? %>
   <div id="error_explanation">
     <h4><%= pluralize(@participant.errors.count, "error") %> prohibited the application from being sent:</h4>
@@ -366,3 +366,4 @@
               </table>
             <% end %>
             <br />
+            <%end%>
