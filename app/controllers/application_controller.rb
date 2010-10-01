@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
   before_filter  :set_language, :set_days_until
 
   def set_days_until
-  difference = (Time.local(2010,"sep",30,23,59,59)-Time.now)
+  difference = (Time.local(2010,"sep",30,23,59,59)-Time.now.getlocal)
 
   @seconds    =  difference % 60
   difference = (difference - @seconds) / 60
@@ -21,6 +21,7 @@ class ApplicationController < ActionController::Base
   @days       =  difference % 7
   end
 
+  
   def set_language
     unless session[:locale]
       country_code = get_country_code_by_id(request.remote_ip)
