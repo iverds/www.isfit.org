@@ -1,5 +1,8 @@
 class PositionsController < ApplicationController
  def index
+  @positions = []
+  return
+  # Temp fix
   @positions = Position.find_all_active_positions
   @temp = []
   @positions.each do |p|
